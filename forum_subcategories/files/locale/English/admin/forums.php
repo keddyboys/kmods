@@ -15,7 +15,7 @@ $locale['422'] = "Save Category";
 // Delete Forum Category
 $locale['440'] = "Delete Forum Category?";
 // Forum titles
-$locale['500'] = "Add Forum";
+$locale['500'] = "Add Forum"; 
 $locale['501'] = "Edit Forum";
 // Forum Category messages
 $locale['510'] = "Forum added";
