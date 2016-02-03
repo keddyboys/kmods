@@ -9,7 +9,6 @@ Installation:
 3.Upon successful installation delete install folder.
 You must do this before uploading or modifying files to prevent error warning!
 4.Upload files to the folders using the folder structure in the download
-
 Core File Modifications:
 1.- administration/forums.php,
 - forum/index.php, 
@@ -20,21 +19,7 @@ Core File Modifications:
 - locale/English/forum/main.php
 2.forum_parent field added to DB_FORUMS table.
 3.Added includes/subcats_include.php
-
-Uninstallation:
-1.Upload folder install in the root folder.
-2.Run http://www.yoursite.tld/install/index.php
-3.Upon successful uninstallation delete install folder.
-4.Delete includes/subcats_include.php.
-5.Put the original core files back. 
-
- Web:  http://www.kmods.ro
- Support:  http://dev.kmods.ro  Version: 1.30 
-
-Notes: Back up all relevant files being installing this mod.
-   
 Changelog:
-
  v1.00 - First public test version [BETA]
  v1.10 - Bugs fixed
  v1.20 - Bugs fixed
