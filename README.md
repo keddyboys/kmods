@@ -11,8 +11,7 @@ You must do this before uploading or modifying files to prevent error warning!
 4.Upload files to the folders using the folder structure in the download
 
 Core File Modifications:
-1.
-- administration/forums.php,
+1.- administration/forums.php,
 - forum/index.php, 
 - forum/viewthread.php, 
 - forum/viewforum.php, 
