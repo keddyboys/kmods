@@ -1,9 +1,9 @@
 <?php
 // Contact Form
-$locale['400'] = "Contacteaz&#259;-m&#259;";
-$locale['401'] = "Exist&#259; numeroase metode de a m&#259; contacta. &#206;mi po&#355;i trimite un email direct la  
-[SITE_EMAIL]. Dac&#259; e&#351;ti membru, &#238;mi po&#355;i trimite un [PM_LINK].
-Alternativ, po&#355;i completa formularul de pe aceast&#259; pagin&#259; &#238;mi va trimite mesajul t&#259;u prin email.";
+$locale['400'] = "Contacteaz&#259;-ne";
+$locale['401'] = "Exist&#259; numeroase metode de a ne contacta. Ne po&#355;i trimite un email direct la  
+[SITE_EMAIL]. Dac&#259; e&#351;ti membru, ne po&#355;i trimite un [PM_LINK].
+Alternativ, po&#355;i completa formularul de pe aceast&#259; pagin&#259; ne va trimite mesajul t&#259;u prin email.";
 $locale['402'] = "Nume:";
 $locale['403'] = "Adresa de e-mail:";
 $locale['404'] = "Subiect:";
