@@ -19,7 +19,7 @@ require_once "../maincore.php";
 require_once INCLUDES."forum_include.php";
 require_once THEMES."templates/header.php";
 include LOCALE.LOCALESET."forum/main.php";
-require_once INCLUDES."subcats_include.php";
+require_once INCLUDES."subcats_include.php";//subforums
 
 $posts_per_page = 20;
 
@@ -429,7 +429,7 @@ while ($data = dbarray($result)) {
 		if ($current_cat != "") { $forum_list .= "</optgroup>\n"; }
 		$current_cat = $data['forum_cat_name'];
 		$forum_list .= "<optgroup label='".$data['forum_cat_name']."'>\n";
-		$forum_list .= jump_to_forum($data['forum_id']);//subforums
+		$forum_list .= forum_jump_to($data['forum_id']);//subforums
 	}
 	$sel = ($data['forum_id'] == $fdata['forum_id'] ? " selected='selected'" : "");
 	$forum_list .= "<option value='".$data['forum_id']."'$sel>".$data['forum_name']."</option>\n";

@@ -19,7 +19,7 @@
 require_once "../maincore.php";
 require_once THEMES."templates/header.php";
 include LOCALE.LOCALESET."forum/options.php";
-require_once INCLUDES."subcats_include.php";
+require_once INCLUDES."subcats_include.php";//subforums
 
 if (!isset($_GET['thread_id']) || !isnum($_GET['thread_id'])) { redirect("index.php"); }
 
@@ -198,7 +198,7 @@ if (isset($_GET['step']) && $_GET['step'] == "renew") {
 					while ($data2 = dbarray($result2)) {
 						if ($_GET['forum_id'] == $data2['forum_id']) { $sel = " selected"; } else { $sel = ""; }
 						$move_list .= "<option value='".$data2['forum_id']."'$sel>".$data2['forum_name']."</option>\n";
-						$move_list .= move_to_forum($data2['forum_id']);//subforums
+						$move_list .= forum_move_to($data2['forum_id']);//subforums
 					}
 					$move_list .= "</optgroup>\n";
 					

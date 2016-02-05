@@ -18,7 +18,7 @@
 require_once "../maincore.php";
 require_once THEMES."templates/header.php";
 include LOCALE.LOCALESET."forum/main.php";
-require_once INCLUDES."subcats_include.php";
+require_once INCLUDES."subcats_include.php";//subforums
 
 if (!isset($lastvisited) || !isnum($lastvisited)) { $lastvisited = time(); }
 
@@ -75,13 +75,13 @@ if (!defined("iMOD") && iMEMBER && $fdata['forum_moderators']) {
 if (!defined("iMOD")) { define("iMOD", false); }
 
 $caption = $fdata['forum_cat_name']." &raquo; ".$fdata['forum_name'];
-// Subforums begin
+//subforums begin
 if ($fdata['forum_parent'] != 0 ) { 
 $sub_data = dbarray(dbquery("SELECT forum_id, forum_name FROM ".DB_FORUMS." WHERE forum_id='".$fdata['forum_parent']."'"));
 $caption = $fdata['forum_cat_name']." &raquo; <a href='".FORUM."viewforum.php?forum_id=".$sub_data['forum_id']."'>".$sub_data['forum_name']."</a> &raquo; ".$fdata['forum_name'];
 }else{
 $caption = $fdata['forum_cat_name']." &raquo; ".$fdata['forum_name'];
-} // Subforums end
+} //subforums end
 add_to_title($locale['global_201'].$fdata['forum_name']);
 
 if (isset($_POST['delete_threads']) && iMOD) {
@@ -259,7 +259,7 @@ $result = dbquery(
 	FROM ".DB_FORUMS." f
 	INNER JOIN ".DB_FORUMS." f2 ON f.forum_cat=f2.forum_id
 	WHERE ".groupaccess('f.forum_access')." AND f.forum_cat!='0' AND f.forum_parent='0' ORDER BY f2.forum_order ASC, f.forum_order ASC"
-);
+);//subforums
 while ($data2 = dbarray($result)) {
 	if ($data2['forum_cat_name'] != $current_cat) {
 		if ($current_cat != "") { $forum_list .= "</optgroup>\n"; }
@@ -268,7 +268,7 @@ while ($data2 = dbarray($result)) {
 	}
 	$sel = ($data2['forum_id'] == $fdata['forum_id'] ? " selected='selected'" : "");
 	$forum_list .= "<option value='".$data2['forum_id']."'$sel>".$data2['forum_name']."</option>\n";
-	$forum_list .= jump_to_forum($data2['forum_id']);//subforums
+	$forum_list .= forum_jump_to($data2['forum_id']);//subforums
 }
 $forum_list .= "</optgroup>\n";
 echo "<div style='padding-top:5px'>\n".$locale['540']."<br />\n";

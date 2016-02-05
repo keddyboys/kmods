@@ -17,7 +17,7 @@
 +--------------------------------------------------------*/
 require_once "../maincore.php";
 require_once INCLUDES."bbcode_include.php";
-require_once INCLUDES."subcats_include.php";
+require_once INCLUDES."subcats_include.php";//subforums
 
 if (!checkrights("F") || !defined("iAUTH") || !isset($_GET['aid']) || $_GET['aid'] != iAUTH) { redirect("../index.php"); }
 
@@ -34,7 +34,7 @@ if (isset($_GET['action']) && $_GET['action'] == "refresh") {
 		$result2 = dbquery("SELECT forum_id FROM ".DB_FORUMS." WHERE forum_parent='0' AND forum_cat='".$data['forum_id']."' ORDER BY forum_order");
 		while ($data2 = dbarray($result2)) {
 			$result3 = dbquery("UPDATE ".DB_FORUMS." SET forum_order='$k' WHERE forum_id='".$data2['forum_id']."'");
-			echo refresh_subforums($data2['forum_id']);//subforums
+			echo forum_admin_refresh($data2['forum_id']);//subforums
 			$k++;
 		}
 		$i++; $k = 1;
@@ -427,8 +427,8 @@ if (isset($_POST['save_cat'])) {
 			if (dbrows($result2)) {
 				$k = 1;
 				while ($data2 = dbarray($result2)) {
-					echo forum_parent_subforums($data2, $result2, $k);
-					echo forum_subforums($data2['forum_id']);
+					echo forum_admin_parent($data2, $result2, $k);
+					echo forum_admin_subparent($data2['forum_id']);
 					$k++;
 				}
 			}

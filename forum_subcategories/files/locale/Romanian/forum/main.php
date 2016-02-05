@@ -12,7 +12,7 @@ $locale['408'] = "Nu exist&#259; categorii de forum definite.";
 $locale['409'] = "Forum cu post&#259;ri noi de la ultima vizit&#259;";
 $locale['410'] = "Forum f&#259;r&#259; post&#259;ri noi de la ultima vizit&#259;";
 $locale['411'] = "Moderat de: ";
-$locale['412'] = "Subforum: ";
+$locale['412'] = "Subforum: ";//subforums
 // View Forum
 $locale['450'] = "Vizualizare forum";
 $locale['451'] = "Subiect";

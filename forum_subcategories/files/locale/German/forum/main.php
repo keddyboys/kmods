@@ -12,7 +12,7 @@ $locale['408'] = "Es sind keine Foren Kategorien definiert.";
 $locale['409'] = "Foren mit neuen Beitr&auml;gen seit dem letzten Besuch.";
 $locale['410'] = "Foren ohne neue Beitr&auml;ge seit dem letzten Besuch.";
 $locale['411'] = "moderiert von: ";
-$locale['412'] = "Unterforen ";//Subforums
+$locale['412'] = "Unterforen ";//subforums
 // View Forum
 $locale['450'] = "Forum ansehen";
 $locale['451'] = "Thema";
