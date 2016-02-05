@@ -13,3 +13,4 @@ $locale['global_140'] = "Vizualizare";
 $locale['global_141'] = "Vizualizare sondaj";
 $locale['global_142'] = "Nu exist&#259; sondaje definite.";
 $locale['global_143'] = "Evalu&#259;ri";
+?>

@@ -45,3 +45,4 @@ $locale['SB_yes'] = "Da";
 $locale['SB_no'] = "Nu";
 $locale['SB_submit'] = "Trimite";
 $locale['SB_update_ok'] = "Set&#259;ri actualizatre";
+?>

@@ -8,3 +8,4 @@ $locale['rss005'] = " - Leg&#259;turi pe internet";
 $locale['rss007'] = "&#238;n";
 $locale['rss008'] = "Nicio dat&#259; RSS disponibil&#259;";
 $locale['rss009'] = "Feed-uri RSS";
+?>

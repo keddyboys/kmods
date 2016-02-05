@@ -171,3 +171,4 @@ $locale['536'] = "Time limit for editing";
 $locale['537'] = "(In minutes, 0 for no limit)";
 $locale['538'] = "Update time on edit";
 $locale['539'] = "Show lastpost avatar";
+?>

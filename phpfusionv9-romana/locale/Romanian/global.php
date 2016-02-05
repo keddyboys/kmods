@@ -264,7 +264,7 @@ $locale['global_204'] = $locale['global_200']."Forum";
 //Themes
 $locale['global_210'] = "Salt la con&#355;inut";
 $locale['global_300'] = "Nu am g&#259;sit nicio tematic&#259;.";
-$locale['global_301'] = "Ne pare sincer r&#259;u, dar aceast&#259; pagin&#259; nu poate fi afi&#351;at&#259;. Din cauza unor circumstan&#355;e, tematica saitului nu poate fi g&#259;sit&#259;. Dac&#259; e&#351;ti un administrator al site-ului, folose&#351;te clientul t&#259;u de FTP pentru a &#238;nc&#259;rca o tematic&#259; pentru <em>PHP-Fusion 9</em> &#238;n directorul <em>themes/</em>. Dup&#259; &#238;nc&#259;rcare, verific&#259; &#238;n <em>Set&#259;ri tematic&#259;</em> dac&#259; tematica selectat&#259; a fost corect &#238;nc&#259;rcat&#259; &#238;n directorul <em>themes/</em>. Directorul tematicii &#238;nc&#259;rcate trebuie s&#259; aib&#259; acela&#351;i nume (incluz&#226;nd literele mici sau mari, care sunt importante pe serverele bazate pe Unix) cu cel ales &#238;n pagina <em>Set&#259;ri tematic&#259;</em>.\n\nDac&#259; e&#351;ti un utilizator obi&#351;nuit pe acest sait, te rog contacteaz&#259; administratorul la adresa [SITE_EMAIL] &#351;i raporteaz&#259;-i aceast&#259; problem&#259;.";
+$locale['global_301'] = "Ne pare sincer r&#259;u, dar aceast&#259; pagin&#259; nu poate fi afi&#351;at&#259;. Din cauza unor circumstan&#355;e, tematica saitului nu poate fi g&#259;sit&#259;. Dac&#259; e&#351;ti un administrator al sait-ului, folose&#351;te clientul t&#259;u de FTP pentru a &#238;nc&#259;rca o tematic&#259; pentru <em>PHP-Fusion 9</em> &#238;n directorul <em>themes/</em>. Dup&#259; &#238;nc&#259;rcare, verific&#259; &#238;n <em>Set&#259;ri tematic&#259;</em> dac&#259; tematica selectat&#259; a fost corect &#238;nc&#259;rcat&#259; &#238;n directorul <em>themes/</em>. Directorul tematicii &#238;nc&#259;rcate trebuie s&#259; aib&#259; acela&#351;i nume (incluz&#226;nd literele mici sau mari, care sunt importante pe serverele bazate pe Unix) cu cel ales &#238;n pagina <em>Set&#259;ri tematic&#259;</em>.\n\nDac&#259; e&#351;ti un utilizator obi&#351;nuit pe acest sait, te rog contacteaz&#259; administratorul la adresa [SITE_EMAIL] &#351;i raporteaz&#259;-i aceast&#259; problem&#259;.";
 $locale['global_302'] = "Tematica aleas&#259; &#238;n Set&#259;ri principale nu exist&#259; sau este incomplet&#259;!";
 // JavaScript Not Enabled
 $locale['global_303'] = "O nu! Unde este <strong>JavaScript</strong>?\nBrowser-ul dvs. nu are sau nu accepta JavaScript. Va rugam <strong>activati  JavaScript</strong> in browser-ul dvs. ,<br /> sau <strong>actualizati</strong> cu un browser care accepta JavaScript";
@@ -327,7 +327,7 @@ $locale['global_900'] = "Hexazecimala nu a putut fi convertit&#259; &#238;n zeci
 //Language Selection
 $locale['global_ML100'] = "Limba:";
 $locale['global_ML101'] = "- Selecteaz&#259; limba -";
-$locale['global_ML102'] = "Limba site-ului";
+$locale['global_ML102'] = "Limba sait-ului";
 // Flood Control
 $locale['flood'] = "&#206;&#355;i este interzis&#259; postarea p&#226;n&#259; perioada de flood. Te rog a&#351;teapt&#259; %s.";// You are barred to post until the flood period cooldown is over
 $locale['no_image'] = "Nicio imagine";
@@ -468,3 +468,4 @@ $locale['fmt_week'] = "s&#259;pt&#259;m&#226;ni|s&#259;pt&#259;m&#226;n&#259;";
 $locale['fmt_year'] = "ani|an";
 // include Defender locales
 include __DIR__."/defender.php";
+?>

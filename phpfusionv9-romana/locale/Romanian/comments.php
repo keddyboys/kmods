@@ -10,3 +10,4 @@ $locale['c107'] = " Dezactiveaz&#259; figurinele &#238;n aceast&#259; postare";
 $locale['c108'] = "Editeaz&#259;";
 $locale['c109'] = "&#350;terge";
 $locale['c110'] = "&#350;tergi acest comentariu?";
+?>

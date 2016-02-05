@@ -27,3 +27,4 @@ $locale['439'] = "Nedefinit";
 $locale['439a'] = "Te rog adaug&#259; un titlu sondajului";
 $locale['439b'] = "Trebuie s&#259; introduci cel pu&#355;in o op&#355;iune &#238;n sondaj";
 $locale['439c'] = "Sondaje";
+?>
