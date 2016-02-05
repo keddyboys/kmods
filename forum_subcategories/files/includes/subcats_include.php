@@ -1,5 +1,5 @@
 <?php
-//subforums functions begin
+//forum subcategories functions begin
 function forum_admin_refreshs($parent){
 	$result2 = dbquery("SELECT forum_id FROM ".DB_FORUMS." WHERE forum_parent='".$parent."' ORDER BY forum_order");
 	$k = 1;
@@ -146,9 +146,9 @@ function forum_move_to($forum_id){
 
 }
 
-//subforums functions end
+//forum subcategories functions end
 
-//subdownloads functions begin
+//download subcategories functions begin
 function download_subcats($id, $type="") {
     global $locale, $subcats_available;
  
@@ -180,9 +180,9 @@ function download_subcats($id, $type="") {
 				$num = dbcount("(download_cat)", DB_DOWNLOADS, "download_cat='".(int)$data['download_cat_id']."'");
 				echo "<a href='".FUSION_SELF."?cat_id=".$data['download_cat_id']."'>".$data['download_cat_name']."</a> <span class='small2'>(".$num.")</span>";
 				if ($k > 0) echo  ", ";
-				echo "</td></tr>\n";
+				
 			}
-			
+			echo "</td></tr>\n";
 		}
 	}
 }
@@ -265,5 +265,4 @@ $result = dbquery("SELECT download_cat_id, download_cat_name, download_cat_descr
 	
 	return $sublist;
 }
-//subdownloads functions end
 ?>
