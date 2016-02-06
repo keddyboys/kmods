@@ -15,7 +15,7 @@ $locale['download_0021'] = "Editare categorii desc&#259;rc&#259;ri";
 $locale['download_0022'] = "Categorii de desc&#259;rc&#259;ri";
 $locale['download_0023'] = "Editor/administrator categorii desc&#259;rc&#259;ri";//"Downloads Category Editor";
 // Downloads submissions
-$locale['download_0039'] = "Revino la [SITENAME]";
+$locale['download_0039'] = "Revinire la [SITENAME]";
 $locale['download_0040'] = "Ne pare r&#259;u, deocamdat&#259; nu accept&#259;m trimiteri de desc&#259;rc&#259;rii pe acest sait.";
 $locale['download_0041'] = "Trimite o desc&#259;rcare"; // 650
 $locale['download_0042'] = "&#206;&#355;i mul&#355;umim pentru trimterea de desc&#259;rcare";
@@ -28,8 +28,8 @@ $locale['download_0046'] = "Trimiteri de desc&#259;rc&#259;rii";
 $locale['download_0047'] = "Este obligatorie captura de ecran?";//Required screenshot?
 $locale['download_0048'] = "Este obligatorie descrierea extins&#259;?";//Required full description?
 // Downloads submissions - admin
-$locale['download_0049'] = "Trimiteri de desc&#259;rc&#259;rii";
-$locale['download_0050'] = "Nu exist&#259; trimiteri de desc&#259;rc&#259;rii";
+$locale['download_0049'] = "Desc&#259;rc&#259;ri trimise";
+$locale['download_0050'] = "Nicio desc&#259;rcare &#238;n a&#351;teptarea verific&#259;rii.";
 $locale['download_0051'] = "Momentan sunt %s care a&#351;teapt&#259; s&#259; fie verificate.";
 $locale['download_0052'] = "Subiect verificare a trimiterilor";//Submission Subject for Review";
 $locale['download_0053'] = "Autor trimitere";

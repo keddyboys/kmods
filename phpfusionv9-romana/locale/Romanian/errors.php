@@ -16,4 +16,3 @@ $locale['E_STRICT'] = "";
 $locale['err_100'] = "necunoscut&#259;";
 $locale['err_101'] = "ATEN&#354;IE:O eroare a fost &#238;mpinat&#259; la procesarea paginii. Te rog uit&#259;-te &#238;n [ERROR_LOG_URL]jurnalul de erori[/ERROR_LOG_URL] PHP-Fusion pentru detalii.";
 $locale['err_102'] = "Arat&#259;-mi eroarea!";
-?>

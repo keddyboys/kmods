@@ -1,6 +1,6 @@
 <?php
-$locale['uf_web'] = "Website";
-$locale['uf_web_desc'] = "URL website";
-$locale['uf_web_error'] = "Website can not be left empty.";
-$locale['uf_web_001'] = "Visit";
-
+$locale['uf_web'] = "Pagin&#259; de internet";
+$locale['uf_web_desc'] = "Pagin&#259; de internet";
+$locale['uf_web_error'] = "Eroare: C&#226;mpul 'Pagin&#259; de internet' nu poate fi l&#259;sat gol.";
+$locale['uf_web_001'] = "Viziteaz&#259;";
+?>

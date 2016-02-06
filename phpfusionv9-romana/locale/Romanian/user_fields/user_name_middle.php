@@ -1,5 +1,5 @@
 <?php
-$locale['uf_name_middle'] = "Second (middle) name";
-$locale['uf_name_middle_desc'] = "Real user second name.";
-$locale['uf_name_middle_error'] = "Second (middle) name can not be left empty..";
-
+$locale['uf_name_middle'] = "Numele mijlociu";
+$locale['uf_name_middle_desc'] = "Numele mijlociu al utilizatorului.";
+$locale['uf_name_middle_error'] = "Numele mijlociu al utilizatorului nu poate fi l&#259;sat gol.";
+?>

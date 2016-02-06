@@ -1,12 +1,12 @@
 <?php
 // Blog Submissions messages
-$locale['blog_0130'] = "Nu exist&#259; trimiteri de post&#259;ri pe blog";//There are currently no blog submissions";
-$locale['blog_0131'] = "Verific&#259; trimiterile de post&#259;ri pe blog";//Review Blog Submission";
+$locale['blog_0130'] = "Nicio postare pe blog &#238;n a&#351;teptarea verific&#259;rii";//There are currently no blog submissions";&#238;n a&#351;teptarea verific&#259;rii"
+$locale['blog_0131'] = "Verific&#259; post&#259;rile pe blog trimise";//Review Blog Submission";
 $locale['blog_0132'] = "Urm&#259;toarea postare pe blog a fost trimis&#259; de ";
 $locale['blog_0133'] = "Vrei s&#259; publici sau s&#259; &#351;tergi aceast&#259; postare pe blog?";
 $locale['blog_0134'] = "Public&#259; postarea pe blog";
 $locale['blog_0135'] = "&#350;terge postarea pe blog";
-$locale['blog_0136'] = "Subiect verificare a trimiterilor";//Submission Subject for Review";
+$locale['blog_0136'] = "Subiect de verificare a trimiterilor";//Submission Subject for Review";
 $locale['blog_0137'] = "Momentan sunt %s care a&#351;teapt&#259; s&#259; fie verificate.";
 $locale['blog_0138'] = "Ne pare r&#259;u, deocamdat&#259; nu accept&#259;m trimiteri de post&#259;rii pe blog pe acest sait.";
 $locale['blog_0141'] = "Previzualizeaz&#259; blog";
@@ -92,9 +92,9 @@ $locale['blog_0450'] = "Te rog specifica un subiect";
 $locale['blog_0451'] = "Sterg aceasta postare pe blog?";
 $locale['blog_0451b'] = "Sterg aceasta categorie de blog?";
 $locale['blog_0452'] = "%s sunt dezactivate pentru toate post&#259;rile pe blog.\n\rAceast&#259; setare va intra &#238;n vigoare numai atunci c&#226;nd acestea sunt activate din nou.";
-$locale['blog_0456'] = 'Nu exist&#259; post&#259;ri pe blog &#238;n aceast&#259; categorie.';
+$locale['blog_0456'] = "Nu exist&#259; post&#259;ri pe blog &#238;n aceast&#259; categorie.";
 $locale['blog_0457'] = "Te rog specific&#259; un cu&#226;nt cheie";
-$locale['blog_0461'] = 'Nu exist&#259; categorii de blog definite.';
+$locale['blog_0461'] = "Nu exist&#259; categorii de blog definite.";
 // Filters
 $locale['blog_0458'] = "Filtreaz&#259; dup&#259;:";
 $locale['blog_0459'] = "Filtreaz&#259; dup&#259; categorie";
@@ -105,7 +105,7 @@ $locale['center'] = "Centru";
 $locale['right'] = "Dreapta";
 $locale['blog_0600'] = "Trimiteri de post&#259;rii pe blog";
 $locale['blog_0601'] = "Imagine trimitere";
-$locale['blog_0602'] = "Este necesar ca blogul s&#259; fie extins?";//"Required extended blog?";
+$locale['blog_0602'] = " Postare extins&#259; obligatorie?";//Required extended blog?
 // Public Submissions Form
 $locale['blog_0700'] = "Trimite o postare pe blog";
 $locale['blog_0701'] = "&#206;&#355;i mul&#355;umim pentru trimterea de postare pe blog";
@@ -114,18 +114,18 @@ $locale['blog_0703'] = "Folose&#351;te acest formular pentru a trimite o postare
 [SITENAME] &#238;&#351;i rezerv&#259; dreptul de a amenda sau edita orice trimitere. <br />
 Trimiterile ar trebui s&#259; fie aplicabile con&#355;inutului acestui portal, iar cele nepotrivite vor fi respinse.";
 $locale['blog_0704'] = "Revino la [SITENAME]";
-$locale['601'] = "M&#259;rime pictogram&#259;:";
+$locale['601'] = "M&#259;rime pictograme:";
 $locale['602'] = "M&#259;rime imagine:";
 $locale['603'] = "M&#259;rime maxim&#259; imagine:";
-$locale['604'] = "L&#259;&#355;ime  x &#206;n&#259;l&#355;ime";//"Width x Height";
+$locale['604'] = "L&#259;&#355;ime  x &#206;n&#259;l&#355;ime";//Width x Height
 $locale['605'] = "Dimensiunea max: (bytes):";
 // Blog & News Settings
 $locale['950'] = "&#206;nc&#259;rca imagine";
-$locale['951'] = "Url imagine";//Image link:";
+$locale['951'] = "Url imagine";//Image link
 $locale['952'] = "Categorie";
 $locale['953'] = "Posteaz&#259; o &#351;tire";
 $locale['953b'] = "Posteaz&#259; pe blog";
-$locale['954'] = "Raport pictograme";//"Thumb ratio:";
+$locale['954'] = "Raport pictograme";//Thumb ratio
 $locale['955'] = "Original";
 $locale['956'] = "P&#259;trat";//"Square";
 $locale['959'] = "Imagine &#238;nc&#259;rcat&#259;";

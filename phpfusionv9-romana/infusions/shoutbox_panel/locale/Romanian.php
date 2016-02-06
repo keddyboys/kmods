@@ -1,7 +1,7 @@
 <?php
 $locale['SB_title'] = "Shoutbox";
 $locale['SB_desc'] = "Panou Shoutbox";
-$locale['SB_admin1'] = "Shoutbox Admin";
+$locale['SB_admin1'] = "Administrare Shoutbox";
 
 // Shoutbox
 $locale['SB_name'] = "Nume:";
@@ -24,7 +24,7 @@ $locale['SB_shouts_deleted'] = "Shout-uri &#351;terse";
 $locale['SB_save_shout'] = "Salveaz&#259; mesaj";
 
 // Prune Shoutbox
-$locale['SB_delete_old'] = "&#351; mesajele mai vechi dec&#226;t";
+$locale['SB_delete_old'] = "&#350;terge mesajele mai vechi dec&#226;t";
 $locale['SB_days'] = " zile";
 $locale['SB_delete_shouts'] = "&#350;terge shout-urile";
 

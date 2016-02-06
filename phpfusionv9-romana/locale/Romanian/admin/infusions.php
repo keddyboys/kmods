@@ -1,25 +1,26 @@
 <?php
 // Infusion Management
-$locale['400'] = "Infusions";
-$locale['401'] = "Infuse";
-$locale['402'] = "This item is currently infused";
-$locale['403'] = "This item cannot be infused";
-$locale['404'] = "Infused Infusions";
-$locale['405'] = "Title";
-$locale['406'] = "Version";
-$locale['407'] = "Developer";
+$locale['400'] = "Infuzii";
+$locale['401'] = "Infuzeaz&#259;";
+$locale['402'] = "Acest obiect este deja infuzat";
+$locale['403'] = "Acest obiect nu poate fi infuzat";
+$locale['404'] = "Infuzii infuzate";
+$locale['405'] = "Titlu";
+$locale['406'] = "Versiune";
+$locale['407'] = "Dezvoltator";
 $locale['408'] = "Contact";
 $locale['409'] = "Email";
-$locale['410'] = "Web";
-$locale['411'] = "Defuse";
-$locale['412'] = "Defuse this infusion?";
-$locale['413'] = "Key:";
-$locale['414'] = "Not Infused";
-$locale['415'] = "Infused";
-$locale['416'] = "Upgrade Available";
-$locale['417'] = "No infusions available.";
+$locale['410'] = "Internet";
+$locale['411'] = "De-fuzeaz&#259;";
+$locale['412'] = "De-fuzez aceasta infuzie?";
+$locale['413'] = "Cheie:";
+$locale['414'] = "Nu este infuzat&#259;";
+$locale['415'] = "Infuzat";
+$locale['416'] = "Actualizare disponibil&#259;";
+$locale['417'] = "Nicio infuzie disponibil&#259;.";
 $locale['418'] = "Status";
-$locale['419'] = "Options";
-$locale['420'] = "Version";
-$locale['421'] = "Author";
-$locale['422'] = "Download more Addons";
+$locale['419'] = "Op&#355;iuni";
+$locale['420'] = "Versione";
+$locale['421'] = "Autor";
+$locale['422'] = "Descarc&#259; mai multe";
+?>
