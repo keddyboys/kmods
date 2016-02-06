@@ -126,3 +126,4 @@ $locale['fields_0515'] = "Web Url";
 $locale['fields_0600'] = "There are %s sub-category(s) in this category";
 $locale['fields_0601'] = "There are %s field(s) in this category";
 $locale['fields_0602'] = "This module cannot be installed. Missing table column information.";
+?>

@@ -1,26 +1,27 @@
 <?php
 // Titles
-$locale['400'] = "Error Log";
-$locale['401'] = "Take a look into the file";
+$locale['400'] = "Jurnal de erori";
+$locale['401'] = "Arunc&#259; o privire &#238;n fi&#351;ier";
 // Errors table
-$locale['410'] = "Error";
-$locale['411'] = "On Page";
-$locale['412'] = "User";
-$locale['413'] = "Date";
-$locale['414'] = "Status";
-$locale['415'] = "Line:";
-$locale['416'] = "Level:";
+$locale['410'] = "Eroare";
+$locale['411'] = "&#206;n pagina";
+$locale['412'] = "Utilizator";
+$locale['413'] = "Data";
+$locale['414'] = "Statut";
+$locale['415'] = "Linie:";
+$locale['416'] = "Nivel:";
 $locale['417'] = "IP:";
-$locale['418'] = "No errors in the log.";
-$locale['419'] = "File";
-$locale['420'] = "Details";
-$locale['421'] = "Source code";
-$locale['422'] = "Back to top";
+$locale['418'] = "Nici o eroare.";
+$locale['419'] = "Fi&#351;ier";
+$locale['420'] = "Detalii";
+$locale['421'] = "Cod surs&#259;";
+$locale['422'] = "&#206;napoi sus";
 // Delete form
-$locale['440'] = "Delete all entries with status";
+$locale['440'] = "&#350;terge toate &#238;nregistr&#259;rile cu statutul de ";
 // Status form
-$locale['450'] = "New";
-$locale['451'] = "Solved";
-$locale['452'] = "Ignored";
-$locale['453'] = "Apply";
-$locale['454'] = "Severity";
+$locale['450'] = "Nou";
+$locale['451'] = "Rezolvat";
+$locale['452'] = "Ignorat";
+$locale['453'] = "Aplic&#259;";
+$locale['454'] = "Severitate";
+?>

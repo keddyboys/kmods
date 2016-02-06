@@ -1,29 +1,31 @@
 <?php
-$locale['apw_title'] = "Administrator Password Reset";
-$locale['apw_desc'] = "Changes Administrator login/admin passwords";
-$locale['apw_admin1'] = "Administrator Reset";
-$locale['400'] = "Administrator(s) to reset:";
-$locale['401'] = "All Administrators";
-$locale['402'] = "Only Super Administrators";
-$locale['403'] = "Only Administrators";
-$locale['404'] = "Justification for reset:";
-$locale['405'] = "Reset both login and admin passwords";
-$locale['406'] = "Reset Passwords";
-$locale['407'] = "Password reset at ";
-$locale['408'] = "Hello [USER_NAME],\n\nYour admin password has been reset at [SITEURL]:\n\n
-Admin Password: [NEW_ADMIN_PASS]\n\nThe reason for this reset is: [RESET_MESSAGE]\n\nRegards,\n[ADMIN]";
-$locale['409'] = "Hello [USER_NAME],\nYour login and admin passwords have been reset at [SITEURL]:\n\n
-Login Password: [NEW_PASS]\nAdmin Password: [NEW_ADMIN_PASS]\n\nThe reason for this reset is: [RESET_MESSAGE]\n
-Regards,\n[ADMIN]";
-$locale['410'] = "Reset Results";
-$locale['411'] = "Notice: Admin Password not entered or incorrect.";
-$locale['412'] = "Admin Password:";
-$locale['415'] = "Reset Log";
-$locale['416'] = "Log ID";
-$locale['417'] = "Reset time";
-$locale['418'] = "Responsible";
-$locale['419'] = "Reset";
-$locale['420'] = "Successfull";
-$locale['421'] = "Reason";
-$locale['422'] = "of";
-$locale['423'] = "No reason given.";
+// Infusion titles & description
+$locale['apw_title'] = "Resetarea parolei de administrator";
+$locale['apw_desc'] = "Schimbarea parolei de conectare/admin a administratorulu";
+$locale['apw_admin1'] = "Resetare administrator";
+$locale['400'] = "Resetare parol&#259; administrator(i):";
+$locale['401'] = "To&#355;i administratorii";
+$locale['402'] = "Doar Super Administrator";
+$locale['403'] = "Doar Administrator";
+$locale['404'] = "Motivul reset&#259;rii:";
+$locale['405'] = "Reseteaz&#259; ambele parole (conectare/admin)";
+$locale['406'] = "Reseteaz&#259; parolele";
+$locale['407'] = "Resetarea parolei la ";
+$locale['408'] = "Salut [USER_NAME],\n\nParola de administrator a fost resetata pe [SITEURL]:\n\n
+Noua parola de administrare: [NEW_ADMIN_PASS]\n\nMotivul resetarii: [RESET_MESSAGE]\n\nCu respect,\n[ADMIN]";
+$locale['409'] = "Salut [USER_NAME],\nParola de conectare si cea de administrator ti-au fost resetate pe [SITEURL]:\n\n
+Noua parola de conectare: [NEW_PASS]\nNoua parola de administrare: [NEW_ADMIN_PASS]\n\nMotivul resetarii: [RESET_MESSAGE]\n
+Cu respect,\n[ADMIN]";
+$locale['410'] = "Rezultatul reset&#259;rii";
+$locale['411'] = "<strong>Atentie:</strong> Parola de a administrare nu a fost introdus&#259; sau este incorect&#259;.";
+$locale['412'] = "Parola de administrare:";
+$locale['415'] = "Jurnal de reset&#259;ri";
+$locale['416'] = "ID jurnal";
+$locale['417'] = "Ora reset&#259;rii";
+$locale['418'] = "Responsabilul";
+$locale['419'] = "Resetat";
+$locale['420'] = "Succes";
+$locale['421'] = "Motiv";
+$locale['422'] = "din";
+$locale['423'] = "Niciun motiv.";
+?>

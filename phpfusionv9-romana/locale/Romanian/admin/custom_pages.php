@@ -1,46 +1,47 @@
 <?php
-$locale['cp_100'] = "Page";
-$locale['cp_101'] = "Page Title";
-$locale['cp_102'] = "Visibility";
-$locale['cp_103'] = "Language";
-$locale['cp_104'] = "Allow Comments";
-$locale['cp_105'] = "Allow Ratings";
-$locale['cp_106'] = "Sitelinks";
+$locale['cp_100'] = "Pagin&#259;";
+$locale['cp_101'] = "Titlu pagin&#259;";
+$locale['cp_102'] = "Vizibilitate";
+$locale['cp_103'] = "Limba";
+$locale['cp_104'] = "Activeaz&#259; comentariile";
+$locale['cp_105'] = "Activeaz&#259; votarea";
+$locale['cp_106'] = "Adaug&#259; o leg&#259;tur&#259; &#238;n meniul de navigare";
 // Custom Pages titles
-$locale['400'] = "Add Custom Page";
-$locale['401'] = "Edit Custom Page";
-$locale['402'] = "Current Custom Pages";
-$locale['403'] = "Custom Pages";
+$locale['400'] = "Adaug&#259; o pagin&#259; personalizat&#259;";
+$locale['401'] = "Editare pagin&#259; personalizat&#259;";
+$locale['402'] = "Pagina personalizat&#259; curent&#259;";
+$locale['403'] = "Pagini personalizate";
 // Custom Pages messages
-$locale['410'] = "Custom Page added";
-$locale['411'] = "Custom Page updated";
-$locale['412'] = "The url to this page is: ";
-$locale['413'] = "Custom Page deleted";
+$locale['410'] = "Pagin&#259; ad&#259;ugat&#259;";
+$locale['411'] = "Pagin&#259; actualizat&#259;";
+$locale['412'] = "Adresa URL c&#259;tre pagin&#259; este: ";
+$locale['413'] = "Pagin&#259; &#351;tears&#259;";
 // Custom Page form
-$locale['420'] = "Edit";
-$locale['421'] = "Delete";
-$locale['422'] = "Page Title:";
-$locale['423'] = "Access: ";
-$locale['424'] = "Page Content:";
-$locale['425'] = "Admin Password:";
-$locale['426'] = "Add link to navigation menu";
-$locale['427'] = "Enable Comments";
-$locale['428'] = "Enable Ratings";
-$locale['429'] = "Preview Page";
-$locale['430'] = "Save Page";
+$locale['420'] = "Editeaz&#259;";
+$locale['421'] = "&#350;terge";
+$locale['422'] = "Titlu pagin&#259;:";
+$locale['423'] = "Acces: ";
+$locale['424'] = "Con&#355;inut pagin&#259;:";
+$locale['425'] = "Parola de administrare:";
+$locale['426'] = "Adaug&#259; o leg&#259;tur&#259; &#238;n meniul de navigare";
+$locale['427'] = "Activeaz&#259; comentariile";
+$locale['428'] = "Activeaz&#259; votarea";
+$locale['429'] = "Previzualizeaz&#259; pagina";
+$locale['430'] = "Salveaz&#259; pagina";
 $locale['431'] = "Pagebreak";
-$locale['432'] = "Keywords (you need to hit enter for each keyword)";
+$locale['432'] = "Cuvinte cheie(apasa enter pentru fiecare cuvant cheie)";//nu functioneaza diacriticile
 // Popup errors / warning messages
-$locale['450'] = "Delete this custom page?";
-$locale['451'] = "Please specify a page title";
-$locale['452'] = "Please specify your password";
-$locale['453'] = "Admin password doesn't match";
-$locale['454'] = "%s are disabled for all items.\nThis setting will only take effect when they are enabled again.";
-$locale['455'] = "Comments";
-$locale['456'] = "Ratings";
-$locale['457'] = "Comments and Ratings";
-$locale['458'] = "There are no custom page defined";
+$locale['450'] = "Sterg aceasta pagina personalizata?";
+$locale['451'] = "Te rog specifica un titlu pentru pagina.";
+$locale['452'] = "Te rog introdu parola de administrare.";
+$locale['453'] = "Parola de administrare nu se potriveste.";
+$locale['454'] = "%s: dezactivate pentru toate elementele.<br />Aceast&#259; setare va intra &#238;n vigoare numai atunci c&#226;nd acestea sunt activate din nou.";
+$locale['455'] = "Comentarii";
+$locale['456'] = "Evalu&#259;ri";
+$locale['457'] = $locale['455']." &#351;i ".$locale['456'];
+$locale['458'] = "Nu exist&#259; pagini personalizate definite";
 // TinyMCE editor
 $locale['460'] = "TinyMCE:";
-$locale['461'] = "Enable";
-$locale['462'] = "Disable";
+$locale['461'] = "Activeaz&#259;";
+$locale['462'] = "Dezactiveaz&#259;";
+?>
