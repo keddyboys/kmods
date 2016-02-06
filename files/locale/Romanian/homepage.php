@@ -26,3 +26,4 @@ $locale['home_0102'] = "Nicio categorie";
 
 $locale['home_0105'] = "Publicat de ";
 $locale['home_0106'] = " &#238;n ";
+?>

@@ -395,7 +395,7 @@ $locale['info'] = "Info";
 $locale['image'] = "Imagine";
 // Forms
 $locale['choose'] = "Te rog alege una...";
-$locale['no_opts'] = "Nicio selec&#355;ie";
+$locale['no_opts'] = "Nicio selectie";
 $locale['root'] = "Ca p&#259;rinte";
 $locale['choose-user'] = "Te rog alege un utilizator...";
 $locale['choose-location'] = "Te rog alege o loca&#355;ie";

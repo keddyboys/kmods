@@ -289,7 +289,7 @@ $locale['setup_3628'] = "Nervos";
 $locale['setup_3640'] = "Profil";
 $locale['setup_3641'] = "Date de contact";
 $locale['setup_3642'] = "Alte informa&#355;ii";
-$locale['setup_3643'] = "Op/73355;iuni";
+$locale['setup_3643'] = "Op&#355;iuni";
 $locale['setup_3644'] = "Statistici";
 $locale['setup_3645'] = "Intimitate";//Privacy	";
 
