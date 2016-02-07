@@ -1,7 +1,8 @@
 <?php
 require_once "../maincore.php";
 require_once THEMES."templates/header.php";
-if (file_exists(BASEDIR."install/locale/".$settings['locale'].".php")) {
+redirect(BASEDIR."install/install_subforums.php");
+/*if (file_exists(BASEDIR."install/locale/".$settings['locale'].".php")) {
 	include BASEDIR."install/locale/".$settings['locale'].".php";
 } else {
 	include BASEDIR."install/locale/English.php";
@@ -40,6 +41,6 @@ if (iADMIN && (iUSER_RIGHTS != "" || iUSER_RIGHTS != "C")) {
 opentable("".$locale['sd_101']."");
 echo "<div style='text-align:center'>\n<br />".$locale['install_104']."<br />\n<br />\n</div>\n";
 closetable();
-}
+}*/
 require_once THEMES."templates/footer.php";
 ?>
