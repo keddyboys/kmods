@@ -6,69 +6,40 @@ if (file_exists(BASEDIR."install/locale/".$settings['locale'].".php")) {
 } else {
 	include BASEDIR."install/locale/English.php";
 }
+if (iADMIN && (iUSER_RIGHTS != "" || iUSER_RIGHTS != "C")) {
 
-if (iADMIN && (iUSER_RIGHTS != "" || iUSER_RIGHTS != "F")) {
 
-		if (!isset($_GET['install_ok']) && !isset($_GET['delete_ok'])) {
-		opentable($locale['install_01']);
-		$result = dbquery("SHOW COLUMNS FROM ".DB_FORUMS." LIKE 'forum_parent'");
-		if (dbrows($result) == 0) {
-		        echo "<div style='text-align:center'>".$locale['install_02'];
-                echo "<br /><br /><center>
-                <form name='subforums' method='post' action='".FUSION_SELF."'>
-                <input type='hidden' name='action' value='install'>
-                <input type='submit' name='install' value='".$locale['install_03']."' class='button'></form></div></center>";
-		} else {
-		        echo "<br /><div style='text-align:center'>".$locale['install_04'];
-                echo "<br /><br /><center>
-                <form name='subforums' method='post' action='".FUSION_SELF."'>
-                <input type='hidden' name='action' value='delete'>
-                <input type='submit' name='delete' value='".$locale['install_05']."' class='button' onClick='return DeleteItem()'></form></div></center>";
-                echo "<script type='text/javascript'>
-               function DeleteItem()
-            {
-               return confirm('".$locale['install_06']."');
-            }
-               </script>\n";
-        }
-		closetable();
-    }
-            if (isset($_POST['action']) && $_POST['action'] == "install") {
-                if (isset($_POST['install'])) {
-				// Alter table
-		        $result = dbquery("ALTER TABLE ".DB_FORUMS." ADD forum_parent MEDIUMINT( 8 ) NOT NULL DEFAULT '0' AFTER forum_cat");
-				redirect(FUSION_SELF."?install_ok"); die;
-				}	
-			}	
-			if (isset($_POST['action']) && $_POST['action'] == "delete") {
-                if (isset($_POST['delete'])) {
-				// Alter table
-		        $result = dbquery("ALTER TABLE ".DB_FORUMS." DROP forum_parent");
-				redirect(FUSION_SELF."?delete_ok"); die;
-				}	
-			}	
-				
-				
-           if (isset($_GET['install_ok'])){
-            opentable("".$locale['install_07']."");
-            echo "<div style='text-align:center'>\n<br />".$locale['install_08']."<br />\n<br />\n</div>\n";
-            echo "<div style='text-align:center'><a href='".BASEDIR."index.php'>".$locale['install_11']."</a></div>";
-            closetable();
-        }
-
-            if (isset($_GET['delete_ok'])){
-            opentable("".$locale['install_07']."");
-            echo "<div style='text-align:center'>\n<br />".$locale['install_09']."<br />\n<br />\n</div>\n";
-            echo "<div style='text-align:center'><a href='".BASEDIR."index.php'>".$locale['install_11']."</a></div>";
-            closetable();
-        }
-		
+    opentable($locale['install_101']);
+	        echo "<table cellpadding='0' cellspacing='0' width='100%'>\n<tr>\n";
+            echo "<td class='tbl2'>".$locale['install_102']."</td>\n";
+       $sf_result = dbquery("SHOW COLUMNS FROM ".DB_FORUMS." LIKE 'forum_parent'");
+	   $sd_result = dbquery("SHOW COLUMNS FROM ".DB_DOWNLOAD_CATS." LIKE 'download_cat_parent'");
+	   $sa_result = dbquery("SHOW COLUMNS FROM ".DB_ARTICLE_CATS." LIKE 'article_cat_parent'");
+	        $sf_val = ((dbrows($sf_result) == 0) ? "install" : "delete");
+			$sd_val = ((dbrows($sd_result) == 0) ? "install" : "delete");
+			$sa_val = ((dbrows($sa_result) == 0) ? "install" : "delete");
+		    echo "</td>\n</tr>\n<tr>\n";
+     		echo "<td class='tbl2'>".$locale['sf_101']."</td>\n";
+		    echo "<td class='tbl2'>\n<form name='subcats' method='post' action='".BASEDIR."install/install_subforums.php'>";
+            echo "<input type='hidden' name='action' value='".$sf_val."'>";
+            echo "<input type='submit' name='".$sf_val."' value='".((dbrows($sf_result) == 0) ? $locale['install_105'] : $locale['install_106'])."' class='button'></form>";
+			echo "</td>\n</tr>\n<tr>\n";
+		    echo "<td class='tbl2'>\n".$locale['sd_101']."</td>\n";
+		    echo "<td class='tbl2'>\n<form name='subcats' method='post' action='".BASEDIR."install/install_subdownloads.php'>";
+            echo "<input type='hidden' name='action' value='".$sd_val."'>";
+            echo "<input type='submit' name='".$sd_val."' value='".((dbrows($sd_result) == 0) ? $locale['install_105'] : $locale['install_106'])."' class='button'></form></div>";
+		    echo "</td>\n</tr>\n<tr>\n";
+     		echo "<td class='tbl2'>".$locale['sa_101']."</td>\n";
+		    echo "<td class='tbl2'>\n<form name='subcats' method='post' action='".BASEDIR."install/install_subforums.php'>";
+            echo "<input type='hidden' name='action' value='".$sa_val."'>";
+            echo "<input type='submit' name='".$sa_val."' value='".((dbrows($sa_result) == 0) ? $locale['install_105'] : $locale['install_106'])."' class='button'></form>";
+			echo "</td>\n</tr>\n</table>\n";
+			
+	closetable();
 } else {
-opentable("".$locale['install_01']."");
-echo "<div style='text-align:center'>\n<br />".$locale['install_10']."<br />\n<br />\n</div>\n";
+opentable("".$locale['sd_101']."");
+echo "<div style='text-align:center'>\n<br />".$locale['install_104']."<br />\n<br />\n</div>\n";
 closetable();
 }
-
 require_once THEMES."templates/footer.php";
-
 ?>

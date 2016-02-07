@@ -304,7 +304,7 @@ function articles_admin_subcats($id) {
   global $aidlink, $locale, $data;
      
     $sublist = "";
-			$result2 = dbquery("SELECT * FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='".$id."' ORDER BY article_cat_name");
+			$result2 = dbquery("SELECT * FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='".(int)$id."' ORDER BY article_cat_name");
 			while ($data2 = dbarray($result2)) {
 			
 			$sublist .= "<tr>\n";
@@ -316,8 +316,24 @@ function articles_admin_subcats($id) {
 			$sublist .= "</tr>\n";
 			
 			}
-		return $sublist;
+			return $sublist;
 
+}
+function article_subarticle($id,$article_cat) {
+
+	$result = dbquery("SELECT article_cat_id, article_cat_name FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='".(int)$id."' ORDER BY article_cat_name DESC");
+	$subcat = "";$sel = "";
+	if (dbrows($result) != 0) {
+	$k = 0;
+		
+		while ($data = dbarray($result)) {
+			if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = (isset($article_cat) && $article_cat == $data['article_cat_id'] ? " selected='selected'" : "");}
+		$subcat .= "<option value='".$data['article_cat_id']."'$sel>".$data['article_cat_name']."</option>\n";
+		$k++;	
+		}
+		
+	} 
+    return $subcat;	
 }
 
 
