@@ -10,14 +10,19 @@ $locale['install_107'] = "Revenire la sait";
 $locale['install_108'] = "Rezultat";
 $locale['install_109'] = "Mod instalat cu succes! &#350;terge imediat acest folder.";
 $locale['install_110'] = "Mod dezinstalat cu succes! &#350;terge imediat acest folder.<br />Pune fi&#351;ierele originale pe host!";
+//subforums
+$locale['sf_101'] = "Subcategori la forum";
+$locale['sf_102'] = "Acest script va instala subcategoriile la forum.";
+$locale['sf_103'] = "Acest script va dezinstala subcategoriile la forum.";
+$locale['sf_104'] = "Esti sigur ca vrei sa dezinstalezi subcategoriile la forum1?";
 //subdownloads
 $locale['sd_101'] = "Subcategori la desc&#259;rc&#259;ri";
 $locale['sd_102'] = "Acest script va instala subcategoriile pentru desc&#259;rc&#259;ri.";
 $locale['sd_103'] = "Acest script va dezinstala subcategoriile pentru desc&#259;rc&#259;ri.";
 $locale['sd_104'] = "Esti sigur ca vrei sa stergi subcategoriile pentru descarcari?";
-//subforums
-$locale['sf_101'] = "Subcategori la forum";
-$locale['sf_102'] = "Acest script va instala sub-forumurile.";
-$locale['sf_103'] = "Acest script va dezinstala sub-forumurile.";
-$locale['sf_104'] = "Esti sigur ca vrei sa dezinstalezi sub-forumurile?";
+//subarticles
+$locale['sa_101'] = "Subcategori la articole";
+$locale['sa_102'] = "Acest script va instala subcategoriile pentur articole.";
+$locale['sa_103'] = "Acest script va instala subcategoriile pentur articole.";
+$locale['sa_104'] = "Esti sigur ca vrei sa stergi subcategoriile pentru articole?";
 ?>
