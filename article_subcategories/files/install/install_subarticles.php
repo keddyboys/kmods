@@ -10,7 +10,7 @@ if (file_exists(BASEDIR."install/locale/".$settings['locale'].".php")) {
 if (iADMIN && (iUSER_RIGHTS != "" || iUSER_RIGHTS != "C")) {
 
 		if (!isset($_GET['install_ok']) && !isset($_GET['delete_ok'])) {
-		opentable($locale['install_01']);
+		opentable($locale['install_101']);
 		$result = dbquery("SHOW COLUMNS FROM ".DB_ARTICLE_CATS." LIKE 'article_cat_parent'");
 		if (dbrows($result) == 0) {
 		        echo "<div style='text-align:center'>".$locale['install_102'];

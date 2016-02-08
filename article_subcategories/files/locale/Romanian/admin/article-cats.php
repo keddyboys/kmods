@@ -20,7 +20,7 @@ $locale['426'] = "Cresc&#259;tor";
 $locale['427'] = "Descresc&#259;tor";
 $locale['428'] = "Acces categorie:";
 $locale['429'] = "Salveaz&#259; categoria";
-$locale['430'] = "P&#259;rinte categorie";//subarticles
+$locale['430'] = "P&#259;rinte categorie<br />(dac&#259; nu are subcategorii)";//subarticles
 // Current category options
 $locale['440'] = "Categorie";
 $locale['441'] = "Acces";

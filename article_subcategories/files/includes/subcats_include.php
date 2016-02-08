@@ -19,7 +19,7 @@ function forum_admin_parent($data2, $result2, $k){
 	$forumR = "";
 	$forumR .= "<tr>\n";
 	$forumR .= "<td class='tbl1'><span class='alt'>";
-	$forumR .= ($data2['forum_parent'] == 0 ) ? $data2['forum_name'] : "--".$data2['forum_name'];
+	$forumR .= ($data2['forum_parent'] == 0 ) ? $data2['forum_name'] : "-".$data2['forum_name'];
 	$forumR .= "</span>\n";
 	$forumR .= "[<a href='".FUSION_SELF.$aidlink."&action=prune&forum_id=".$data2['forum_id']."'>".$locale['563']."</a>]<br />\n";
 	$forumR .= ($data2['forum_description'] ? "<span class='small'>".$data2['forum_description']."</span>" : "")."</td>\n";
@@ -308,7 +308,7 @@ function articles_admin_subcats($id) {
 			while ($data2 = dbarray($result2)) {
 			
 			$sublist .= "<tr>\n";
-			$sublist .= "<td class='tbl1'><strong>--".$data2['article_cat_name']."</strong><br />\n";
+			$sublist .= "<td class='tbl1'><strong>-".$data2['article_cat_name']."</strong><br />\n";
 			$sublist .= "<span class='small'>".trimlink($data2['article_cat_description'], 45)."</span></td>\n";
 			$sublist .= "<td align='center' width='1%' class='tbl1' style='white-space:nowrap'>".getgroupname($data2['article_cat_access'])."</td>\n";
 			$sublist .= "<td align='center' width='1%' class='tbl1' style='white-space:nowrap'><a href='".FUSION_SELF.$aidlink."&action=edit&cat_id=".$data2['article_cat_id']."'>".$locale['443']."</a> -\n";
@@ -328,13 +328,29 @@ function article_subarticle($id,$article_cat) {
 		
 		while ($data = dbarray($result)) {
 			if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = (isset($article_cat) && $article_cat == $data['article_cat_id'] ? " selected='selected'" : "");}
-		$subcat .= "<option value='".$data['article_cat_id']."'$sel>".$data['article_cat_name']."</option>\n";
+		$subcat .= "<option value='".$data['article_cat_id']."'$sel>-".$data['article_cat_name']."</option>\n";
 		$k++;	
 		}
 		
 	} 
     return $subcat;	
 }
-
+function article_admin_editlist($id) {
+	global $data;
+	$editlist = ""; $sel = "";
+	$checkparent = dbcount("(article_cat_id)", DB_ARTICLE_CATS, "article_cat_parent='".(int)$id."'");
+	$result2 = dbquery("SELECT article_cat_id, article_cat_name FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='0' ORDER BY article_cat_name");
+	if (dbrows($result2) != 0) {
+	        $editlist .= "<option value='0'".$sel."><span class='small'></span></option>\n";
+		while ($data2 = dbarray($result2)) {
+			if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = ($data['article_cat_parent'] == $data2['article_cat_id'] ? " selected='selected'" : ""); }
+			
+			if ((isset($_GET['action']) && $_GET['action'] == "edit") &&  ($_GET['cat_id'] != $data2['article_cat_id']) && ($checkparent == 0)) {
+                $editlist .= "<option value='".$data2['article_cat_id']."'$sel>".$data2['article_cat_name']."</option>\n";
+            } 	
+		}
+	}
+     return $editlist;
+}
 
 ?>

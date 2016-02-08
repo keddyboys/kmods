@@ -78,12 +78,11 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 		}
 	}
 	if ((isset($_GET['action']) && $_GET['action'] == "edit") && (isset($_GET['cat_id']) && isnum($_GET['cat_id']))) {
-		$result = dbquery("SELECT article_cat_name, article_cat_description, article_cat_sorting, article_cat_parent, article_cat_access FROM ".DB_ARTICLE_CATS." WHERE article_cat_id='".$_GET['cat_id']."'");
+		$result = dbquery("SELECT article_cat_name, article_cat_description, article_cat_sorting, article_cat_parent, article_cat_access FROM ".DB_ARTICLE_CATS." WHERE article_cat_id='".$_GET['cat_id']."'");//subarticles
 		if (dbrows($result)) {
 			$data = dbarray($result);
 			$cat_name = $data['article_cat_name'];
 			$cat_description = $data['article_cat_description'];
-			
 			$cat_sorting = explode(" ", $data['article_cat_sorting']);
 			if ($cat_sorting[0] == "article_id") { $cat_sort_by = "1"; }
 			if ($cat_sorting[0] == "article_subject") { $cat_sort_by = "2"; }
@@ -111,16 +110,17 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 		$sel = ($cat_access == $user_group['0'] ? " selected='selected'" : "");
 		$access_opts .= "<option value='".$user_group['0']."'$sel>".$user_group['1']."</option>\n";
 	}
-	$editlist = ""; $sel = "";
-	$result2 = dbquery("SELECT * FROM ".DB_ARTICLE_CATS."  WHERE article_cat_parent='0' ORDER BY article_cat_name");
-	if (dbrows($result2) != 0) {
-	        $editlist .= "<option value='0'".$sel."><span class='small'></span></option>\n";
-		while ($data2 = dbarray($result2)) {
-			if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = ($data['article_cat_parent'] == $data2['article_cat_id'] ? " selected='selected'" : ""); }
-			$editlist .= "<option value='".$data2['article_cat_id']."'$sel>".$data2['article_cat_name']."</option>\n";
-		}
-	}
-
+	//subarticles begin
+	//$editlist = ""; $sel = "";
+	//$result2 = dbquery("SELECT article_cat_id, article_cat_name FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='0' ORDER BY article_cat_name");
+	//if (dbrows($result2) != 0) {
+	   //     $editlist .= "<option value='0'".$sel."><span class='small'></span></option>\n";
+	//	while ($data2 = dbarray($result2)) {
+	//		if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = ($data['article_cat_parent'] == $data2['article_cat_id'] ? " selected='selected'" : ""); }
+	//		$editlist .= "<option value='".$data2['article_cat_id']."'$sel>".$data2['article_cat_name']."</option>\n";
+	//	}
+	//}
+    //subarticles end 
 	if (isset($error) && isnum($error)) {
 		if ($error == 1) {
 			$errorMessage = $locale['460'];
@@ -153,7 +153,7 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 	echo "<td class='tbl'><select name='cat_access' class='textbox'>\n".$access_opts."</select></td>\n";
 	echo "</tr>\n<tr>\n";//subarticles
 	echo "<td width='1%' class='tbl' style='white-space:nowrap'>".$locale['430']."</td>\n";//subarticles
-	echo "<td class='tbl'><select name='cat_parent' class='textbox' style='width:150px;'>\n".$editlist."</select></td>\n";//subarticles
+	echo "<td class='tbl'><select name='cat_parent' class='textbox' style='width:150px;'>\n".(isset($_GET['cat_id']) ? article_admin_editlist($_GET['cat_id']) : article_admin_editlist(null))."</select></td>\n";//subarticles
 	echo "</tr>\n<tr>\n";
 	echo "<td align='center' colspan='2' class='tbl'>\n";
 	echo "<input type='submit' name='save_cat' value='".$locale['429']."' class='button' /></td>\n";
