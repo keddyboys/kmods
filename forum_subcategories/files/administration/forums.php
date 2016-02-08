@@ -249,15 +249,7 @@ if (isset($_POST['save_cat'])) {
 				if ((isset($_GET['action']) && $_GET['action'] == "edit") && (isset($_GET['t']) && $_GET['t'] == "forum")) { $sel = ($data2['forum_id'] == $forum_cat ? " selected='selected'" : ""); }
 				$cat_opts .= "<option value='".$data2['forum_id']."'".$sel.">".$data2['forum_name']."</option>\n";
 			}
-            //subforums begin
-			$parent_opts = ""; $parent_select = "";
-			$parent_result = dbquery("SELECT * FROM ".DB_FORUMS." WHERE forum_cat!='0' AND forum_parent='0' ORDER BY forum_order");
-			$parent_opts .= "<option value='0'".$parent_select."><span class='small'></option>\n";
-			while ($parent_data = dbarray($parent_result)) {
-				if ((isset($_GET['action']) && $_GET['action'] == "edit") && (isset($_GET['t']) && $_GET['t'] == "forum")) { $parent_select = ($parent_data['forum_id'] == $forum_parent ? " selected='selected'" : ""); }
-				$parent_opts .= "<option value='".$parent_data['forum_id']."'".$parent_select.">".$parent_data['forum_name']."</option>\n";
-			}
-			//subforums end
+			
 			function create_options($selected, $hide=array(), $off=false) {
 				global $locale; $option_list = ""; $options = getusergroups();
 				if ($off) { $option_list = "<option value='0'>".$locale['531']."</option>\n"; }
@@ -284,7 +276,7 @@ if (isset($_POST['save_cat'])) {
 			echo "<select name='forum_cat' class='textbox' style='width:225px;'>\n".$cat_opts."</select></td>\n";
 			echo "</tr>\n<tr>\n";//subforums
 			echo "<td class='tbl'>".$locale['519']."<br />\n";//subforums
-			echo "<select name='forum_parent' class='textbox' style='width:225px;'>\n".$parent_opts."</select></td>\n";//subforums
+			echo "<select name='forum_parent' class='textbox' style='width:225px;'>\n".(isset($_GET['forum_id']) ? forum_admin_editopts($_GET['forum_id']) : forum_admin_editopts(null))."</select></td>\n";//subforums
 			echo "<td width='55' class='tbl'>";
 			if (!isset($_GET['action']) || $_GET['action'] != "edit") {
 				echo $locale['523']."<br />\n<input type='text' name='forum_order' value='".$forum_order."' class='textbox' style='width:45px;' />";

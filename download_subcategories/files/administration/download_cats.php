@@ -48,7 +48,7 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 	if (isset($_POST['save_cat'])) {
 		$cat_name = stripinput($_POST['cat_name']);
 		$cat_description = stripinput($_POST['cat_description']);
-        $cat_parent = isnum($_POST['cat_parent']) ? $_POST['cat_parent'] : "0";//subdownloads
+		$cat_parent = isset($_POST['cat_parent']) && isnum($_POST['cat_parent']) ? $_POST['cat_parent'] : "0";//subdownloads
 		$cat_access = isnum($_POST['cat_access']) ? $_POST['cat_access'] : "0";
 		if (isnum($_POST['cat_sort_by']) && $_POST['cat_sort_by'] == "1") {
 			$cat_sorting = "download_id ".($_POST['cat_sort_order'] == "ASC" ? "ASC" : "DESC");
@@ -111,19 +111,6 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 		$sel = ($cat_access == $user_group['0'] ? " selected='selected'" : "");
 		$access_opts .= "<option value='".$user_group['0']."'$sel>".$user_group['1']."</option>\n";
 	}
-	//subdownloads begin
-	$editlist = ""; $sel = "";
-	$result2 = dbquery("SELECT * FROM ".DB_DOWNLOAD_CATS."  WHERE download_cat_parent='0' ORDER BY download_cat_name");
-	if (dbrows($result2) != 0) {
-	        $editlist .= "<option value='0'".$sel."></option>\n";
-		while ($data2 = dbarray($result2)) {
-			if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = ($data['download_cat_parent'] == $data2['download_cat_id'] ? " selected='selected'" : ""); }
-			
-			$editlist .= "<option value='".$data2['download_cat_id']."'$sel>".$data2['download_cat_name']."</option>\n";
-		}
-	}
-    //subdownloads end
-
 	if (isset($error) && isnum($error)) {
 		if ($error == 1) {
 			$errorMessage = $locale['460'];
@@ -153,7 +140,7 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 	echo "</select></td>\n";
 	echo "</tr>\n<tr>\n";//subdownloads
 	echo "<td width='1%' class='tbl' style='white-space:nowrap'>".$locale['430']."</td>\n";// subdownloads
-	echo "<td class='tbl'><select name='cat_parent' class='textbox' style='width:150px;'>\n".$editlist."</select></td>\n";// subdownloads
+	echo "<td class='tbl'><select name='cat_parent' class='textbox' style='width:150px;'>\n".(isset($_GET['cat_id']) ? download_admin_editlist($_GET['cat_id']) : download_admin_editlist(null))."</select></td>\n";// subdownloads
 	echo "</tr>\n<tr>\n";
 	echo "<td width='1%' class='tbl' style='white-space:nowrap'>".$locale['428']."</td>\n";
 	echo "<td class='tbl'><select name='cat_access' class='textbox' style='width:150px;'>\n".$access_opts."</select></td>\n";
@@ -182,7 +169,7 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 			echo "<td align='center' width='1%' class='$cell_color' style='white-space:nowrap'><a href='".FUSION_SELF.$aidlink."&amp;action=edit&amp;cat_id=".$data['download_cat_id']."'>".$locale['443']."</a> -\n";
 			echo "<a href='".FUSION_SELF.$aidlink."&amp;action=delete&amp;cat_id=".$data['download_cat_id']."' onclick=\"return confirm('".$locale['450']."');\">".$locale['444']."</a></td>\n";
 			echo "</tr>\n";
-			echo download_admincats_subcats($data['download_cat_id']);//subdownloads
+			echo download_admin_sublist($data['download_cat_id']);//subdownloads
 			$i++;
 		}
 		echo "</table>\n";

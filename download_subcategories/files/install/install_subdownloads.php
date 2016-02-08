@@ -52,14 +52,14 @@ if (iADMIN && (iUSER_RIGHTS != "" || iUSER_RIGHTS != "C")) {
             if (isset($_GET['install_ok'])){
             opentable("".$locale['install_108']."");
             echo "<div style='text-align:center'>\n<br />".$locale['install_109']."<br />\n<br />\n</div>\n";
-            echo "<div style='text-align:center'><a href='".BASEDIR."install/index.php'>".$locale['install_107']."</a></div>";
+            echo "<div style='text-align:center'><a href='".BASEDIR."index.php'>".$locale['install_107']."</a></div>";
             closetable();
         }
 
             if (isset($_GET['delete_ok'])){
             opentable("".$locale['install_108a']."");
             echo "<div style='text-align:center'>\n<br />".$locale['install_110']."<br />\n<br />\n</div>\n";
-            echo "<div style='text-align:center'><a href='".BASEDIR."install/index.php'>".$locale['install_107']."</a></div>";
+            echo "<div style='text-align:center'><a href='".BASEDIR."index.php'>".$locale['install_107']."</a></div>";
             closetable();
         }
 		
