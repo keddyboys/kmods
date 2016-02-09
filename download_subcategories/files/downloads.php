@@ -202,7 +202,7 @@ if (!isset($_GET['download_id']) || !isnum($_GET['download_id'])) {
 			if (isset($_GET['cat_id']) && isnum($_GET['cat_id']) && $cat_data['download_cat_description'] != "") {
 				echo "<tr><td colspan='8' class='tbl1 small' style='text-align:left;'>".$cat_data['download_cat_description']."</td></tr>\n";
 			}
-			if (!isset($_GET['cat_id']) && !isnum($_GET['cat_id'])) {
+			if (!isset($_GET['cat_id'])) {
 				download_subcats($cat_data['download_cat_id'], '1'); //subdownloads
 				// = 0;
 			}	
