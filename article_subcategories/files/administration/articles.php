@@ -16,7 +16,7 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 require_once "../maincore.php";
-require_once INCLUDES."subcats_include.php";//subarticles
+require_once INCLUDES."subcats_include_articles.php";//subarticles
 
 if (!checkrights("A") || !defined("iAUTH") || !isset($_GET['aid']) || $_GET['aid'] != iAUTH) { redirect("../index.php"); }
 

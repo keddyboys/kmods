@@ -18,7 +18,7 @@
 require_once "maincore.php";
 require_once THEMES."templates/header.php";
 include LOCALE.LOCALESET."articles.php";
-require_once INCLUDES."subcats_include.php";//subarticles
+require_once INCLUDES."subcats_include_articles.php";//subarticles
 
 # Breadcrumbs
 # Original Code from Rizald "Elyn" Maxwell

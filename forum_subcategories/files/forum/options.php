@@ -19,7 +19,7 @@
 require_once "../maincore.php";
 require_once THEMES."templates/header.php";
 include LOCALE.LOCALESET."forum/options.php";
-require_once INCLUDES."subcats_include.php";//subforums
+require_once INCLUDES."subcats_include_forums.php";//subforums
 
 if (!isset($_GET['thread_id']) || !isnum($_GET['thread_id'])) { redirect("index.php"); }
 

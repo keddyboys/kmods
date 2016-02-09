@@ -17,7 +17,7 @@
 +--------------------------------------------------------*/
 require_once "../maincore.php";
 require_once INCLUDES."bbcode_include.php";
-require_once INCLUDES."subcats_include.php";//subforums
+require_once INCLUDES."subcats_include_forums.php";//subforums
 
 if (!checkrights("F") || !defined("iAUTH") || !isset($_GET['aid']) || $_GET['aid'] != iAUTH) { redirect("../index.php"); }
 

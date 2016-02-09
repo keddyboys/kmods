@@ -18,7 +18,7 @@
 require_once "maincore.php";
 require_once THEMES."templates/header.php";
 include LOCALE.LOCALESET."downloads.php";
-require_once INCLUDES."subcats_include.php";//subdownloads
+require_once INCLUDES."subcats_include_downloads.php";//subdownloads
 
 add_to_title($locale['global_200'].$locale['400']);
 

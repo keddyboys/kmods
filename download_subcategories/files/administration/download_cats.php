@@ -22,6 +22,7 @@ if (!checkrights("DC") || !defined("iAUTH") || !isset($_GET['aid']) || $_GET['ai
 
 require_once THEMES."templates/admin_header.php";
 include LOCALE.LOCALESET."admin/download-cats.php";
+require_once INCLUDES."subcats_include_downloads.php";//subdownloads
 
 if (isset($_GET['status']) && !isset($message)) {
 	if ($_GET['status'] == "sn") {

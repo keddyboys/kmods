@@ -19,7 +19,7 @@ require_once "../maincore.php";
 require_once INCLUDES."forum_include.php";
 require_once THEMES."templates/header.php";
 include LOCALE.LOCALESET."forum/main.php";
-require_once INCLUDES."subcats_include.php";//subforums
+require_once INCLUDES."subcats_include_forums.php";//subforums
 
 $posts_per_page = 20;
 
