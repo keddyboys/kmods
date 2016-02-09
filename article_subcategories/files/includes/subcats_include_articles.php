@@ -7,7 +7,7 @@ function article_subcats($id, $type="") {
 	if ($k > 0) {
 		if ($type == "1") {
 			$counter = 0; $columns = 2;
-			echo "<span class='side'><strong>".$locale['404']."</strong></span><br />\n";
+			echo "<span class='side'><strong>".$locale['406']."</strong></span><br />\n";
 			
 		echo "<table cellpadding='0' cellspacing='0' width='100%'>\n<tr>\n";
 		while ($data = dbarray($result)) {
@@ -22,7 +22,7 @@ function article_subcats($id, $type="") {
 			echo "<div style='margin:5px'></div>";
 		} else {	  
 	        echo "<br />";
-			echo "<span class='side'><strong>".$locale['404'].": </strong></span>";
+			echo "<span class='side'><strong>".$locale['406'].": </strong></span>";
 			while ($data = dbarray($result)) {
 				$k--;
 				$num = dbcount("(article_cat)", DB_ARTICLES, "article_cat='".(int)$data['article_cat_id']."' AND article_draft='0'");
@@ -33,25 +33,24 @@ function article_subcats($id, $type="") {
 	} 
 }
 function articles_admin_subcats($id) {
-  global $aidlink, $locale, $data;
+  global $aidlink, $locale, $i, $data;
      
-    $sublist = "";
+            $sublist = "";
 			$result2 = dbquery("SELECT article_cat_id, article_cat_name, article_cat_description, article_cat_access FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='".(int)$id."' ORDER BY article_cat_name");
 			while ($data2 = dbarray($result2)) {
-			
+			$cell_color = ($i % 2 == 0 ? "tbl1" : "tbl2");
 			$sublist .= "<tr>\n";
-			$sublist .= "<td class='tbl1'><strong>-".$data2['article_cat_name']."</strong><br />\n";
+			$sublist .= "<td class='$cell_color'><strong>-".$data2['article_cat_name']."</strong><br />\n";
 			$sublist .= "<span class='small'>".trimlink($data2['article_cat_description'], 45)."</span></td>\n";
-			$sublist .= "<td align='center' width='1%' class='tbl1' style='white-space:nowrap'>".getgroupname($data2['article_cat_access'])."</td>\n";
-			$sublist .= "<td align='center' width='1%' class='tbl1' style='white-space:nowrap'><a href='".FUSION_SELF.$aidlink."&action=edit&cat_id=".$data2['article_cat_id']."'>".$locale['443']."</a> -\n";
+			$sublist .= "<td align='center' width='1%' class='$cell_color' style='white-space:nowrap'>".getgroupname($data2['article_cat_access'])."</td>\n";
+			$sublist .= "<td align='center' width='1%' class='$cell_color' style='white-space:nowrap'><a href='".FUSION_SELF.$aidlink."&action=edit&cat_id=".$data2['article_cat_id']."'>".$locale['443']."</a> -\n";
 			$sublist .= "<a href='".FUSION_SELF.$aidlink."&action=delete&cat_id=".$data2['article_cat_id']."' onclick=\"return confirm('".$locale['450']."');\">".$locale['444']."</a></td>\n";
 			$sublist .= "</tr>\n";
-			
 			}
 			return $sublist;
 
 }
-function article_subarticle($id,$article_cat) {
+function article_subarticle($id,$sub_id) {
 
 	$result = dbquery("SELECT article_cat_id, article_cat_name FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='".(int)$id."' ORDER BY article_cat_name DESC");
 	$subcat = "";$sel = "";
@@ -59,7 +58,7 @@ function article_subarticle($id,$article_cat) {
 	$k = 0;
 		
 		while ($data = dbarray($result)) {
-			if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = (isset($article_cat) && $article_cat == $data['article_cat_id'] ? " selected='selected'" : "");}
+			if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = (isset($sub_id) && $sub_id == $data['article_cat_id'] ? " selected='selected'" : "");}
 		$subcat .= "<option value='".$data['article_cat_id']."'$sel>-".$data['article_cat_name']."</option>\n";
 		$k++;	
 		}

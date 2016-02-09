@@ -48,7 +48,7 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 	if (isset($_POST['save_cat'])) {
 		$cat_name = stripinput(trim($_POST['cat_name']));
 		$cat_description = stripinput(trim($_POST['cat_description']));
-		$cat_parent = isnum($_POST['cat_parent']) ? $_POST['cat_parent'] : "0";//subarticles
+		$cat_parent = (isset($_GET['cat_parent']) && isnum($_GET['cat_parent'])) ? $_POST['cat_parent'] : "0";//subarticles
 		$cat_access = isnum($_POST['cat_access']) ? $_POST['cat_access'] : "0";
 		if (isnum($_POST['cat_sort_by']) && $_POST['cat_sort_by'] == "1") {
 			$cat_sorting = "article_id ".($_POST['cat_sort_order'] == "ASC" ? "ASC" : "DESC");
@@ -100,7 +100,7 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 		$cat_description = "";
 		$cat_sort_by = "2";
 		$cat_sort_order = "ASC";
-		$cat_parent = "";//subarticles
+		$cat_parent = "0";//subarticles
 		$cat_access = "";
 		$formaction = FUSION_SELF.$aidlink;
 		$openTable = $locale['400'];
@@ -110,17 +110,6 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 		$sel = ($cat_access == $user_group['0'] ? " selected='selected'" : "");
 		$access_opts .= "<option value='".$user_group['0']."'$sel>".$user_group['1']."</option>\n";
 	}
-	//subarticles begin
-	//$editlist = ""; $sel = "";
-	//$result2 = dbquery("SELECT article_cat_id, article_cat_name FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='0' ORDER BY article_cat_name");
-	//if (dbrows($result2) != 0) {
-	   //     $editlist .= "<option value='0'".$sel."><span class='small'></span></option>\n";
-	//	while ($data2 = dbarray($result2)) {
-	//		if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = ($data['article_cat_parent'] == $data2['article_cat_id'] ? " selected='selected'" : ""); }
-	//		$editlist .= "<option value='".$data2['article_cat_id']."'$sel>".$data2['article_cat_name']."</option>\n";
-	//	}
-	//}
-    //subarticles end 
 	if (isset($error) && isnum($error)) {
 		if ($error == 1) {
 			$errorMessage = $locale['460'];
@@ -171,6 +160,7 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 		echo "<td align='center' width='1%' class='tbl2' style='white-space:nowrap'>".$locale['442']."</td>\n";
 		echo "</tr>\n";
 		while ($data = dbarray($result)) {
+			
 			$cell_color = ($i % 2 == 0 ? "tbl1" : "tbl2");
 			echo "<tr>\n";
 			echo "<td class='$cell_color'><strong>".$data['article_cat_name']."</strong>\n";

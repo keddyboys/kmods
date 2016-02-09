@@ -147,9 +147,10 @@ if (!empty($result)) {
 		$result = dbquery("SELECT article_cat_id, article_cat_name FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='0' ORDER BY article_cat_name DESC");//subarticles
 		$catlist = ""; $sel = "";
 		while ($data = dbarray($result)) {
+            $sub_id = isset($article_cat) ? $article_cat : "0";//subarticles
 			if (isset($article_cat)) $sel = ($article_cat == $data['article_cat_id'] ? " selected='selected'" : "");
 			$catlist .= "<option value='".$data['article_cat_id']."'$sel>".$data['article_cat_name']."</option>\n";
-			$catlist .= article_subarticle($data['article_cat_id'], $article_cat);//subarticles
+			$catlist .= article_subarticle($data['article_cat_id'], $sub_id);//subarticles
 		}	
 		echo "<form name='inputform' method='post' action='".FUSION_SELF.$aidlink."' onsubmit='return ValidateForm(this)'>\n";
 		echo "<table cellpadding='0' cellspacing='0' class='center'>\n<tr>\n";
@@ -230,27 +231,4 @@ if (!empty($result)) {
 }
 
 require_once THEMES."templates/footer.php";
-function article_subarticles($id) {
-//    global $sel;$data;
-	$result = dbquery("SELECT article_cat_id, article_cat_name FROM ".DB_ARTICLE_CATS." WHERE article_cat_parent='".(int)$id."' ORDER BY article_cat_name DESC");
-	$subcat = "";$sel2 = "";
-	if (dbrows($result) != 0) {
-	$k = 0;
-		
-		while ($data2 = dbarray($result)) {
-			if (isset($_GET['action']) && $_GET['action'] == "edit") { 
-			$sel1 = (isset($_GET['article_cat']) && $_GET['article_cat'] == $data2['article_cat_id'] ? $_GET['article_cat'] : "0");
-			$sel2 = (isset($_GET['article_cat']) && $_GET['article_cat'] == $data2['article_cat_id'] ? " selected='selected'" : ""); 
-			} else {
-			$sel2 = (isset($_GET['article_cat']) && $_GET['article_cat'] == $data2['article_cat_id'] ? " selected='selected'" : "");
-		    }
-			//if (isset($article_cat)) $sel = ($article_cat == $data['article_cat_id'] ? " selected='selected'" : "");
-		$subcat .= "<option value='".$data2['article_cat_id']."'$sel2>$sel1-".$data2['article_cat_name']."</option>\n";
-		$k++;	
-		}
-		
-	} 
-    return $subcat;	
-}
-
 ?>
