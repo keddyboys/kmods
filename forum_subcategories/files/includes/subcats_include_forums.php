@@ -144,4 +144,23 @@ function forum_move_to($forum_id){
 	return $move_list;
 
 }
+
+function forum_admin_editopts($id) {
+	global $data;
+     $parent_opts = ""; $sel = "";
+	 $checkparent = dbcount("(forum_id)", DB_FORUMS, "forum_parent='".(int)$id."'");
+	$result2 = dbquery("SELECT forum_id, forum_name FROM ".DB_FORUMS." WHERE forum_cat!='0' AND forum_parent='0' ORDER BY forum_order");
+	        $parent_opts .= "<option value='0'".$sel."><span class='small'></option>\n";
+   	while ($data2 = dbarray($result2)) {
+	    if ((isset($_GET['action']) && $_GET['action'] == "edit") && (isset($_GET['t']) && $_GET['t'] == "forum")) {
+		$sel = ($data2['forum_id'] == $data['forum_parent'] ? " selected='selected'" : ""); }
+	    if ((isset($_GET['action']) && $_GET['action'] == "edit") && (isset($_GET['t']) && $_GET['t'] == "forum") && ($_GET['forum_id'] != $data2['forum_id']) && ($checkparent == 0)) {
+ 			$parent_opts .= "<option value='".$data2['forum_id']."'$sel>".$data2['forum_name']."</option>\n";
+		} elseif (!isset($_GET['t']) || $_GET['t'] != "forum") {
+		    $parent_opts .= "<option value='".$data2['forum_id']."'$sel>".$data2['forum_name']."</option>\n";
+		}
+	}
+	  		
+	return $parent_opts;
+}
 ?>
