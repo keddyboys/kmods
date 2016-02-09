@@ -94,10 +94,10 @@ function download_admin_subcats($id) {
 	return $sublist;
 }
 function download_admin_sublist($id) {
-	global $aidlink, $locale;$sublist = "";
+	global $aidlink, $locale, $i;
+	$sublist = "";
 $result = dbquery("SELECT download_cat_id, download_cat_name, download_cat_description, download_cat_access FROM ".DB_DOWNLOAD_CATS." WHERE download_cat_parent='".(int)$id."' ORDER BY download_cat_name");
 	if (dbrows($result) != 0) {
-		$i = 0;
 		 
 		while ($data = dbarray($result)) {
 			$cell_color = ($i % 2 == 0 ? "tbl1" : "tbl2");
@@ -109,7 +109,6 @@ $result = dbquery("SELECT download_cat_id, download_cat_name, download_cat_descr
 			$sublist .= "<a href='".FUSION_SELF.$aidlink."&amp;action=delete&amp;cat_id=".$data['download_cat_id']."' onclick=\"return confirm('".$locale['450']."');\">".$locale['444']."</a></td>\n";
 			$sublist .= "</tr>\n";
 			echo download_admin_subcats($data['download_cat_id']);// subdownloads
-			$i++;
 		}
 	}
 	
