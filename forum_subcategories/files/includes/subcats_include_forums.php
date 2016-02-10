@@ -1,12 +1,12 @@
 <?php
-function forum_admin_refreshs($parent){
+function forum_admin_refresh($parent){
 	$result2 = dbquery("SELECT forum_id FROM ".DB_FORUMS." WHERE forum_parent='".$parent."' ORDER BY forum_order");
 	$k = 1;
 	$list = "";
 	while ($data2 = dbarray($result2)) {
 		$result3 = dbquery("UPDATE ".DB_FORUMS." SET forum_order='".$k."' WHERE forum_id='".$data2['forum_id']."'");
 		$k++;
-		$list .= forum_admin_refreshs($data2['forum_id']);
+		$list .= forum_admin_refresh($data2['forum_id']);
 	}
 	return $list;
 }
@@ -19,10 +19,10 @@ function forum_admin_parent($data2, $result2, $k){
 	$forumR .= "<tr>\n";
 	$forumR .= "<td class='tbl1'><span class='alt'>";
 	$forumR .= ($data2['forum_parent'] == 0 ) ? $data2['forum_name'] : "-".$data2['forum_name'];
-	$forumR .= "</span>\n";
+	$forumR .= "</span>\n"; 
 	$forumR .= "[<a href='".FUSION_SELF.$aidlink."&action=prune&forum_id=".$data2['forum_id']."'>".$locale['563']."</a>]<br />\n";
 	$forumR .= ($data2['forum_description'] ? "<span class='small'>".$data2['forum_description']."</span>" : "")."</td>\n";
-	$forumR .= "<td align='center' width='1%' class='tbl2' style='white-space:nowrap'>".$data2['forum_order']."</td>\n";
+	$forumR .= "<td align='center' width='1%' class='tbl2' style='white-space:nowrap'>".($data2['forum_parent'] != 0 ? "- " : "").$data2['forum_order']."</td>\n";
 	$forumR .= "<td align='center' width='1%' class='tbl1' style='white-space:nowrap'>\n";
 	$parent = ($data2['forum_parent'] == 0 ? "" : "&parent=".$data2['forum_parent']);
 	
