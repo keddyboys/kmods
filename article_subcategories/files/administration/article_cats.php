@@ -48,7 +48,7 @@ if ((isset($_GET['action']) && $_GET['action'] == "delete") && (isset($_GET['cat
 	if (isset($_POST['save_cat'])) {
 		$cat_name = stripinput(trim($_POST['cat_name']));
 		$cat_description = stripinput(trim($_POST['cat_description']));
-		$cat_parent = (isset($_GET['cat_parent']) && isnum($_GET['cat_parent'])) ? $_POST['cat_parent'] : "0";//subarticles
+		$cat_parent = (isset($_POST['cat_parent']) && isnum($_POST['cat_parent'])) ? $_POST['cat_parent'] : "0";//subarticles
 		$cat_access = isnum($_POST['cat_access']) ? $_POST['cat_access'] : "0";
 		if (isnum($_POST['cat_sort_by']) && $_POST['cat_sort_by'] == "1") {
 			$cat_sorting = "article_id ".($_POST['cat_sort_order'] == "ASC" ? "ASC" : "DESC");
