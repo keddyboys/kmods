@@ -27,7 +27,7 @@ require_once THEMES."templates/admin_header.php";
 require_once INCLUDES."photo_functions_include.php";
 require_once INCLUDES."bbcode_include.php";
 include LOCALE.LOCALESET."admin/photos.php";
-require_once INCLUDES."subcats_include_photogallery.php";//subphotos
+require_once INCLUDES."subcats_photogallery_include.php";//subphotos
 
 if (!isset($_GET['album_id']) || !isnum($_GET['album_id'])) { redirect("photoalbums.php".$aidlink); }
 

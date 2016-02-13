@@ -19,7 +19,7 @@
 require_once "maincore.php";
 require_once THEMES."templates/header.php";
 include LOCALE.LOCALESET."photogallery.php";
-require_once INCLUDES."subcats_include_photogallery.php";//subphotos
+require_once INCLUDES."subcats_photogallery_include.php";//subphotos
 
 define("SAFEMODE", @ini_get("safe_mode") ? true : false);
 
