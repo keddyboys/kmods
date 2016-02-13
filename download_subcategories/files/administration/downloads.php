@@ -22,7 +22,7 @@ if (!checkrights("D") || !defined("iAUTH") || !isset($_GET['aid']) || $_GET['aid
 require_once THEMES."templates/admin_header.php";
 require_once INCLUDES."html_buttons_include.php";
 include LOCALE.LOCALESET."admin/downloads.php";
-require_once INCLUDES."subcats_include_downloads.php";//subdownloads
+require_once INCLUDES."subcats_downloads_include.php";//subdownloads
 
 // initalize vars
 $download_user = $userdata['user_id'];

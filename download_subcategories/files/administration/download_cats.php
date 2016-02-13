@@ -16,13 +16,12 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 require_once "../maincore.php";
-require_once INCLUDES."subcats_include_downloads.php";//subdownloads
 
 if (!checkrights("DC") || !defined("iAUTH") || !isset($_GET['aid']) || $_GET['aid'] != iAUTH) redirect("../index.php");
 
 require_once THEMES."templates/admin_header.php";
 include LOCALE.LOCALESET."admin/download-cats.php";
-require_once INCLUDES."subcats_include_downloads.php";//subdownloads
+require_once INCLUDES."subcats_downloads_include.php";//subdownloads
 
 if (isset($_GET['status']) && !isset($message)) {
 	if ($_GET['status'] == "sn") {
