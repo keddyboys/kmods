@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Language" content="en-ie">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Subcategorii pt forum v1.31 - Instalare &#351;i configurare</title>
+<title>Subcategorii pentru leg&#259;turi sait v1.21 - Installation and Configuration</title>
 <style>
 body {
 	font-family:Verdana,Tahoma,Arial,Sans-Serif;
@@ -80,12 +80,12 @@ body a:hover{
 
 <table width='60%' align='center' class='tbl-border'>
 <tr>
-	<td class='tbl2' align='center'><b>Subcategorii pt forum v1.31</b> Modificare for PHP-Fusion v7.02.07</td>
+	<td class='tbl2' align='center'><b>Subcategorii pentru leg&#259;turi sait v1.21</b> Modificare pentru PHP-Fusion v7.02.07</td>
 </tr>
 
 <tr>
 	<td class='tbl1'><b>Ce face</b>:<br />
-	<p align="left">Aceast&#259; modificare permite crearea sub-forumurilor. Po&#355;i creea at&#226;t sub-forum c&#226;t &#351;i discu&#355;ie.</p>
+	<p align="left">Aceast&#259; modificare permite crearea subcategoriilor pentru leg&#259;turi sait. Po&#355;i creea subcategorii ale categoriilor curente. O categorie de leg&#259;turi sait poate avea at&#226;t subcategorie c&#226;t &#351;i leg&#259;tur&#259;sait.</p>
 	<ul>
 		
 	<p align="left"><br /></p></td>
@@ -95,37 +95,39 @@ body a:hover{
 	<td class='tbl1'><b>Instalare:</b><br />
 	<ol>
 <li>&#206;ncarc&#259; directorul <u>install</u> &#238;n directorul p&#259;rinte.</li><br />
-<li>Intr&#259; pe http://www.siteult&#259;u.ro/install/index.php</li><br />
+<li>Intr&#259; pe http://www.siteult&#259;u.ro/install/index.php.</li><br />
 <li>Dup&#259; instalarea cu succes &#351;terge directorul <u>install</u>.</li><br />
-			<b>Trebuie s&#259; faci asta <u>&#238;nainte</u> de &#238;ncarcarea sau modificarea fi&#351;ierelor pentru prevenirea erorilor!</b><br />
-<li>&#206;ncarc&#259; fi&#351;ierele urm&#259;nd structura directoarelor.</li><br />
+			<b><b>Trebuie s&#259; faci asta <u>&#238;nainte</u> de &#238;ncarcarea sau modificarea fi&#351;ierelor pentru prevenirea erorilor!</b><br />
+<li>&#206;ncarc&#259; fi&#351;ierele urm&#259;nd structura directoarelor.</a></li><br />
 </li><br />
 			</ol>
 	<p><b>Fi&#351;iere modificate:</b></p>
 	<ol>
-        <li>	
-		<ul>- administration/forums.php,</ul>
-		<ul>- forum/index.php, </ul>
-		<ul>- forum/viewthread.php,  </ul>
-		<ul>- forum/viewforum.php,  </ul>
-		<ul>- forum/options.php,  </ul>
-		<ul>- locale/Romanian/admin/forums.php, </ul>
-		<ul>- locale/Romanian/forum/main.php</ul></li>
-		<li>Coloana forum_parent ad&#259;ugat&#259; tablelului DB_FORUMS.</li>
-		<li>Ad&#259;ugat fi&#351;ierul includes/subcats_forums_include.php.</li>
+        <li>
+        <ul>- weblinks.php,  </ul>		
+		<ul>- administration/weblink_cats.php,</ul>
+		<ul>- administration/weblinks.php, </ul>
+		<ul>- locale/English/weblinks.php</ul>
+		<ul>- locale/English/admin/weblinks.php, </ul></li>
+		<li>Coloana weblink_cat_parentad &#259;ugat&#259; tablelului DB_WEBLINK_CATS.</li>
+		<li>Ad&#259;ugat fi&#351;ierul includes/subcats_weblinks_include.php.</li>
+
 	</ol>
 	<p>
 	<br />
 	
 	</td>
 </tr>   
+
+
+
 <tr>
 	<td class='tbl1'><b>Dezinstalare:</b><br />
 	<ol>
 <li>&#206;ncarc&#259; directorul <u>install</u> &#238;n directorul p&#259;rinte.</li><br />
 <li>Intr&#259; pe http://www.siteult&#259;u.ro/install/index.php</li><br />
-<li>Dup&#259; dezinstalarea cu succes &#351;terge directorul <u>install</u>.</li><br />
-<li>Po&#355;i &#351;terge fi&#351;ierul includes/subcats_forums_include.php.</li><br />
+<li>Dup&#259; dezinstalarea cu succes &#351;terge directorul <u>install</u></li><br />
+<li>Po&#355;i &#351;terge fi&#351;ierul includes/subcats_weblinks_include.php.</li><br />
 <li>Pune fi&#351;ierele originale &#238;napoi. </li><br />
 </li>
   </ol>
@@ -142,7 +144,7 @@ body a:hover{
 	http://dev.kmods.ro</a> <br />	
     Repository: <a target="_blank" href="https://github.com/keddyboys/kmods">
 	https://github.com/keddyboys/kmods </a></td>  
-	<td class='tbl3' align="right" valign="bottom" height="52">Version: 1.31</td>
+	<td class='tbl3' align="right" valign="bottom" height="52">Version: 1.21</td>
 
 </tr>
 </table>
@@ -161,18 +163,14 @@ body a:hover{
 			<td class="tbl1"><b>Modific&#259;ri:</b><p><br>
 			v1.00 - Prima versiune public&#259; [BETA]<br />
 			v1.10 - Rezolvarea erorilor<br />
-			v1.20 - Rezolvarea erorilor<br />
-			v1.21 - Rezolvarea erorilor acceselor la forum. (slaughter)<br />
-            v1.22 - Rezolvat Jump to forum, move to forum, new_folder<br />
-			v1.23 - Actualizat&#259; la versiunea 7.02.03 <br />
-	        v1.30 - Actualizat&#259; la versiunea 7.02.07 <br />
-			v1.31 - Rezolvarea erorilor
+	        v1.20 - Actualizat&#259; la versiunea 7.02.07 <br />
+			v1.21 - Rezolvarea erorilor
 			</p>
+
 			</td>
 		</tr>
 	</table>
-	<br />
-<hr color="#000080" size="3" />
-	<div class="footer"><font face="Verdana">© keddy 2016</font></div>
+<hr color="#000080" size="3" /><br />
+<div class="footer"><font face="Verdana">© keddy 2016</font></div>
 </body>
 </html>
