@@ -86,7 +86,7 @@ if (!empty($result)) {
 		while ($data2 = dbarray($result2)) {
 			if (isset($_GET['action']) && $_GET['action'] == "edit") { $sel = ($weblink_cat == $data2['weblink_cat_id'] ? " selected='selected'" : ""); }
 			$editlist .= "<option value='".$data2['weblink_cat_id']."'$sel>".$data2['weblink_cat_name']."</option>\n";
-			$editlist .= weblink_admin_editlistsub($data2['weblink_cat_id']);//subweblinks
+			$editlist .= weblink_admin_subweblinks($data2['weblink_cat_id']);//subweblinks
 		}
 	}
 	echo "<form name='inputform' method='post' action='".$formaction."'>\n";

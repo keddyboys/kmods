@@ -74,17 +74,25 @@ function weblink_admin_subsubcats($id) {
 	return $sublist;
 }
 
-function weblink_admin_editlistsub($id) {
-    global $locale, $sel;
-	$result = dbquery("SELECT weblink_cat_id, weblink_cat_name FROM ".DB_WEBLINK_CATS." WHERE weblink_cat_parent='".$id."' ORDER BY weblink_cat_name");
-	$catlist = "";
-	$k = dbrows($result);
-	if ($k > 0) {
+function weblink_admin_subweblinks($id){
+
+	$result = dbquery("SELECT weblink_cat_id, weblink_cat_name FROM ".DB_WEBLINK_CATS." WHERE weblink_cat_parent='".(int)$id."' ORDER BY weblink_cat_name");
+	$sub_list  = "";
+	
+	if (dbrows($result)) {
+		
+		$k = 1;
 		while ($data = dbarray($result)) {
-			$catlist .= "<option value='".$data['weblink_cat_id']."'$sel>--".$data['weblink_cat_name']."</option>\n";
+			if (isset($_GET['action']) && $_GET['action'] == "edit") { 
+			$sel = ($_GET['weblink_cat_id'] == $data['weblink_cat_id'] ? " selected='selected'" : ""); 
+			} else {
+			$sel = (isset($_GET['cat_id']) && $_GET['cat_id'] == $data['weblink_cat_id'] ? " selected='selected'" : "");
+		    }
+			$sub_list .= "<option value='".$data['weblink_cat_id']."'".$sel.">-".$data['weblink_cat_name']."</option>";
+			$k++;
 		}
 	}
-    return $catlist;	
+	return $sub_list;
 }
 
 function weblink_admin_subcats($id) {
