@@ -36,10 +36,9 @@ function download_subcats($id, $type="") {
 		}
 	}
 }
-function download_subdownloads($parent){
+function download_subdownloads($id){
 
-	$result = dbquery("SELECT download_cat_id, download_cat_name FROM ".DB_DOWNLOAD_CATS." WHERE download_cat_parent=$parent AND ".groupaccess('download_cat_access')."
-		ORDER BY download_cat_name");
+	$result = dbquery("SELECT download_cat_id, download_cat_name FROM ".DB_DOWNLOAD_CATS." WHERE download_cat_parent='".(int)$id."' ORDER BY download_cat_name");
 	$sub_list  = "";
 	
 	if (dbrows($result)) {
@@ -57,6 +56,7 @@ function download_subdownloads($parent){
 	}
 	return $sub_list;
 }
+
 function download_admin_subcats($id) {
 	global $aidlink, $locale;$sublist = "";
 		$result = dbquery("SELECT download_cat_id, download_cat_name FROM ".DB_DOWNLOAD_CATS." WHERE download_cat_parent='".(int)$id."' ORDER BY download_cat_name");
