@@ -3,9 +3,9 @@
 $locale['install_101'] = "Subcategori la galeria foto";
 $locale['install_102'] = "Acest script va instala subcategoriile pentru galeria foto.";
 $locale['install_103'] = "Acest script va dezinstala subcategoriile pentru galeria foto.";
-$locale['install_104'] = "Esti sigur ca vrei sa stergi subcategoriile pentru galeria foto?"; 
-$locale['install_105'] = "Instaleaz&#259;";
-$locale['install_106'] = "Dezinstaleaz&#259;";
+$locale['install_104'] = "Instaleaz&#259;";
+$locale['install_105'] = "Dezinstaleaz&#259;";
+$locale['install_106'] = "Esti sigur ca vrei sa stergi subcategoriile pentru galeria foto?";
 $locale['install_107'] = "Revenire la sait";
 $locale['install_108'] = "Rezultat - instalare";
 $locale['install_108a'] = "Rezultat - dezinstalare";
