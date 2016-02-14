@@ -6,8 +6,8 @@ if (file_exists(BASEDIR."install/locale/".$settings['locale'].".php")) {
 } else {
 	include BASEDIR."install/locale/English.php";
 }
-    if (file_exists(BASEDIR."install/install_subphotos.php")) {
-            redirect(BASEDIR."install/install_subphotos.php");
+    if (file_exists(BASEDIR."install/install_subweblinks.php")) {
+            redirect(BASEDIR."install/install_subweblinks.php");
     } else {
             opentable($locale['install_101']);
 			echo "<div style='text-align:center'>\n<br />".$locale['install_112']."<br />\n<br />\n</div>\n";

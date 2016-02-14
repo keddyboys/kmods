@@ -1,11 +1,11 @@
 <?php
 //index.php
-$locale['install_101'] = "Photogallery subcategories";
-$locale['install_102'] = "This script will install subcategories for photogallery.";
-$locale['install_103'] = "This script will uninstall subcategories for photogallery.";
+$locale['install_101'] = "Weblinks subcategories";
+$locale['install_102'] = "This script will install subcategories for weblinks.";
+$locale['install_103'] = "This script will uninstall subcategories for weblinks.";
 $locale['install_104'] = "Install";
 $locale['install_105'] = "Uninstall";
-$locale['install_106'] = "Really want to remove subcategories for photogallery?";
+$locale['install_106'] = "Really want to remove subcategories for weblinks?";
 $locale['install_107'] = "Return to site";
 $locale['install_108'] = "Result - install";
 $locale['install_108a'] = "Result - uninstall";

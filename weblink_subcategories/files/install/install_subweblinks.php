@@ -8,48 +8,47 @@ if (file_exists(BASEDIR."install/locale/".$settings['locale'].".php")) {
 }
 
 if (iADMIN && (iUSER_RIGHTS != "" || iUSER_RIGHTS != "C")) {
-
-		if (!isset($_GET['install_ok']) && !isset($_GET['delete_ok'])) {
+        if (!isset($_GET['install_ok']) && !isset($_GET['delete_ok'])) {
 		opentable($locale['install_101']);
-		$result = dbquery("SHOW COLUMNS FROM ".DB_DOWNLOAD_CATS." LIKE 'download_cat_parent'");
+		$result = dbquery("SHOW COLUMNS FROM ".DB_WEBLINK_CATS." LIKE 'weblink_cat_parent'");
 		if (dbrows($result) == 0) {
 		        echo "<div style='text-align:center'>".$locale['install_102'];
                 echo "<br /><br /><center>
-                <form name='subcats' method='post' action='".FUSION_SELF."'>
+                <form name='subweblinks' method='post' action='".FUSION_SELF."'>
                 <input type='hidden' name='action' value='install'>
                 <input type='submit' name='install' value='".$locale['install_104']."' class='button'></form></div></center>";
 		} else {
 		        echo "<br /><div style='text-align:center'>".$locale['install_103'];
                 echo "<br /><br /><center>
-                <form name='subcats' method='post' action='".FUSION_SELF."'>
+                <form name='subweblinks' method='post' action='".FUSION_SELF."'>
                 <input type='hidden' name='action' value='delete'>
                 <input type='submit' name='delete' value='".$locale['install_105']."' class='button' onClick='return DeleteItem()'></form></div></center>";
                 echo "<script type='text/javascript'>
                function DeleteItem()
             {
-               return confirm('".$locale['install_106']."');
+               return confirm('".$locale['install_105']."');
             }
                </script>\n";
         }
 		closetable();
-    }
+        } 
             if (isset($_POST['action']) && $_POST['action'] == "install") {
                 if (isset($_POST['install'])) {
 				// Alter table
-		        $result = dbquery("ALTER TABLE ".DB_DOWNLOAD_CATS." ADD download_cat_parent MEDIUMINT( 8 ) UNSIGNED NOT NULL DEFAULT '0' AFTER download_cat_sorting");
+		        $result = dbquery("ALTER TABLE ".DB_WEBLINK_CATS." ADD weblink_cat_parent MEDIUMINT( 8 ) UNSIGNED NOT NULL DEFAULT '0' AFTER weblink_cat_sorting");
 				redirect(FUSION_SELF."?install_ok"); die;
 				}	
 			}	
 			if (isset($_POST['action']) && $_POST['action'] == "delete") {
                 if (isset($_POST['delete'])) {
 				// Alter table
-		        $result = dbquery("ALTER TABLE ".DB_DOWNLOAD_CATS." DROP download_cat_parent");
+		        $result = dbquery("ALTER TABLE ".DB_WEBLINK_CATS." DROP weblink_cat_parent");
 				redirect(FUSION_SELF."?delete_ok"); die;
 				}	
 			}	
 				
 				
-            if (isset($_GET['install_ok'])){
+           if (isset($_GET['install_ok'])){
             opentable("".$locale['install_108']."");
             echo "<div style='text-align:center'>\n<br />".$locale['install_109']."<br />\n<br />\n</div>\n";
             echo "<div style='text-align:center'><a href='".BASEDIR."index.php'>".$locale['install_107']."</a></div>";
@@ -65,7 +64,7 @@ if (iADMIN && (iUSER_RIGHTS != "" || iUSER_RIGHTS != "C")) {
 		
 } else {
 opentable("".$locale['install_101']."");
-echo "<div style='text-align:center'>\n<br />".$locale['install_111']."<br />\n<br />\n</div>\n";
+echo "<div style='text-align:center'>\n<br />".$locale['install_107']."<br />\n<br />\n</div>\n";
 closetable();
 }
 
